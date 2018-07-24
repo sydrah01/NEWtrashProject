@@ -33,8 +33,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "pizzaBox",
         "cerealBox",
         "milkCarton"
-        
-        
     ]
     private let recyclingImageNames = [
     " "
