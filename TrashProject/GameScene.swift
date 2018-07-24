@@ -40,6 +40,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     " "
         
     ]
+    
     private let compostImageNames = [
         "peanuts",
         "appleCore",
