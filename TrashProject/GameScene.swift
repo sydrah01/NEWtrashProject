@@ -21,6 +21,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     private var label : SKLabelNode?
     
+    private var points: Int = 0
+    
     private var caughtTrash : SKNode?
     
     var i : Int = 0
@@ -38,17 +40,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     
     private let compostImageNames = [
-        "peanuts",
-        "appleCore",
-        "avacadoPits",
-        "eggCarton",
-        "eggShells",
-        "foosWaste",
-        "leaf",
-        "muffinWrapper",
-        "peanuts",
-        "toothpick",
-        "pizzaBox"
+        "peanuts", "appleCore", "avacadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
         ]
    
     
@@ -215,19 +207,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             let isCorrectBucket = pieceName + "Bucket" == bucketName
             if isCorrectBucket {
                 firstBody.node!.removeFromParent()
-                numCorrect+=1
-                scene?.backgroundColor = SKColor.green
-                
-                
-                //scene?.backgroundColor = SKColor.black
-            }
-            else{
-                firstBody.node!.removeFromParent()
-                numIncorrect+=1
-                scene?.backgroundColor = SKColor.red
-                
-                //scene?.backgroundColor = SKColor.black
-                //Ok so Im trying to get it to turn back to black but I need a delay
+                points += 1 //adding one point
             }
             
         }
