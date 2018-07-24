@@ -26,7 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
-    ]
+    ] 
     
     private let recycleImageNames = [
         "can",
