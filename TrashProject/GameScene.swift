@@ -21,10 +21,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private let trashImageNames = [
         "diapers",
+        "straw",
+        "candyWrapper",
+        "paperCup",
+        "lightBulb",
+        "shot-needle-clipart-1",
+        "neswpaper",
+        "paperBag",
+        "envelopes",
+        "cardboardBox",
+        "pizzaBox",
+        "cerealBox",
+        "milkCarton"
+        
         
     ]
     private let recyclingImageNames = [
-    "straw"
+    " "
+        
     ]
     private let compostImageNames = [
         "peanuts",
