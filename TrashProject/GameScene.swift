@@ -23,10 +23,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "diapers",
         "straw"
         
+        
+        
+        //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
+    ] 
+    
+    private let recycleImageNames = [
+        "can",
+        "car",
+        "carpet",
+        "drink",
+        "etrash",
+        "fluolight",
+        "fridge",
+        "mattress",
+        "paintcans",
+        "paper",
+        "tires"
+        
         //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
     ]
     private let recycleImageNames = ["Bottle", "Can"]
     private let compostImageNames = ["AppleCore", "Banana"]
+    
     
     override func didMove(to view: SKView) {
         // Set self as the contact delegate. didBegin will be called when collisions occur.
