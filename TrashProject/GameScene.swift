@@ -234,13 +234,11 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             i += 1
         }
     }
-    
+    //hello
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
-
-
     
 
 }

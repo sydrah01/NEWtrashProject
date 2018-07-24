@@ -60,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="34"/>
+            <point key="canvasLocation" x="31" y="11"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4g6-zT-DBA">
@@ -222,9 +222,6 @@
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="6QR-XD-yCo" kind="show" id="9eR-99-abm"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cardboardBox" translatesAutoresizingMaskIntoConstraints="NO" id="2s0-xw-j7F">
                                 <rect key="frame" x="167" y="308" width="87" height="60"/>
@@ -585,9 +582,6 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="6QR-XD-yCo" kind="show" id="ewi-D5-cwL"/>
-                                </connections>
                             </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="toothpick" translatesAutoresizingMaskIntoConstraints="NO" id="Ilt-Is-CiA">
                                 <rect key="frame" x="0.0" y="473" width="82" height="78"/>
@@ -616,18 +610,6 @@
         <image name="drink" width="50" height="107"/>
         <image name="eggCarton" width="150" height="82"/>
         <image name="eggShells" width="150" height="106"/>
-        <image name="envelopes" width="144" height="92"/>
-        <image name="etrash" width="144" height="115"/>
-        <image name="fluolight" width="144" height="230"/>
-        <image name="foodWaste" width="146" height="130"/>
-        <image name="fridge" width="144" height="144"/>
-        <image name="leaf" width="150" height="100"/>
-        <image name="lightBulb" width="144" height="256"/>
-        <image name="mattress" width="144" height="86"/>
-        <image name="milkCarton" width="144" height="172"/>
-        <image name="muffinWraper" width="144" height="144"/>
-        <image name="newspapers" width="144" height="105"/>
-        <image name="paintcans" width="80" height="70"/>
         <image name="paper" width="80" height="79"/>
         <image name="paperBag" width="144" height="96"/>
         <image name="paperCup" width="144" height="144"/>
