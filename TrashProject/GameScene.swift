@@ -10,6 +10,10 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+ 
+    
+  
+    
     
     // Define collision cetegories
     private let pieceCategory  : UInt32 = 0x1 << 0
@@ -18,34 +22,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var label : SKLabelNode?
     
     private var caughtTrash : SKNode?
+    var numCorrect: Int = 0
+    var numIncorrect: Int = 0
     
-    private let trashImageNames = [
-        "diapers",
-        "straw",
-        "candyWrapper",
-        "paperCup",
-        "lightBulb",
-        "shot-needle-clipart-1",
-        "neswpaper",
-    ]
-    private let recyclingImageNames = [
-    "can",
-    "car",
-    "carpet",
-    "drink",
-    "etrash",
-    "fluolight",
-    "fridge",
-    "mattress",
-    "paintcans",
-    "paper",
-    "tires",
-    "paperBag",
-    "envelopes",
-    "cardboardBox",
-    "cerealBox",
-    "milkCarton"
-    ]
+    private let trashImageNames = ["diapers", "straw"
+        //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
+    ] 
+    
+    private let recycleImageNames = [
+        "can", "car", "carpet", "drink", "etrash", "fluolight", "fridge", "mattress", "paintcans", "paper","tires"
+]
+    private let compostImageNames = ["appleCore", "bananaPeel"]
+    
     
     private let compostImageNames = [
         "peanuts",
@@ -60,12 +48,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "toothpick",
         "pizzaBox"
         ]
-        //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
+   
     
-    
+    override func didMove(to view: SKView) {
+        // Set self as the contact delegate. didBegin will be called when collisions occur.
+        physicsWorld.contactDelegate = self
+        
+        // Slow down gravity
+        physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
+        
+        //Adds three buckets
+        addBucket(bucketName: "trashBucket", startingPosition: CGPoint(x: -300, y: -600), size: CGPoint(x: 200, y: 300))
+        addBucket(bucketName: "recyclingBucket", startingPosition: CGPoint(x: -100, y: -600), size: CGPoint(x: 200, y: 300))
+        addBucket(bucketName: "compostBucket", startingPosition: CGPoint(x: 100, y: -600), size: CGPoint(x: 200, y: 300))
+        
+        //For testing purposes, add one of each kind of trash, later randomize it
+        var i = 0
+        for trashImageName in trashImageNames {
+            addPiece(imageName:trashImageName, nodeName: "trash", startingPosition: CGPoint(x:75 * i, y: 650))
+            i += 1
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "highScore")
+        }
+    }
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
     // Node name should be "trash" or "recycling" or "compost"
     func addPiece(imageName: String, nodeName: String, startingPosition: CGPoint) {
+        
         let piece = SKSpriteNode(imageNamed: imageName)
         piece.name = nodeName
         piece.position = startingPosition
@@ -206,9 +216,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let isCorrectBucket = pieceName + "Bucket" == bucketName
             if isCorrectBucket {
                 firstBody.node!.removeFromParent()
+                numCorrect+=1
+                scene?.backgroundColor = SKColor.green
+                
+                
+                //scene?.backgroundColor = SKColor.black
             }
+            else{
+                firstBody.node!.removeFromParent()
+                numIncorrect+=1
+                scene?.backgroundColor = SKColor.red
+                
+                //scene?.backgroundColor = SKColor.black
+                //Ok so Im trying to get it to turn back to black but I need a delay
+            }
+            
         }
+            
+            
+            //But Im still working on the randomizer so ill upload that later
+      
     }
+    
+    
+
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
