@@ -35,6 +35,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private let compostImageNames = ["appleCore", "bananaPeel"]
     
     
+    private let compostImageNames = [
+        "peanuts",
+        "appleCore",
+        "avacadoPits",
+        "eggCarton",
+        "eggShells",
+        "foosWaste",
+        "leaf",
+        "muffinWrapper",
+        "peanuts",
+        "toothpick",
+        "pizzaBox"
+        ]
+   
     
     override func didMove(to view: SKView) {
         // Set self as the contact delegate. didBegin will be called when collisions occur.
@@ -54,12 +68,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addPiece(imageName:trashImageName, nodeName: "trash", startingPosition: CGPoint(x:75 * i, y: 650))
             i += 1
         }
-        
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//titleLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
+        set {
+            UserDefaults.standard.set(newValue, forKey: "highScore")
         }
     }
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
@@ -96,6 +106,45 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(bucket)
     }
     
+    
+    
+    override func didMove(to view: SKView) {
+        // Set self as the contact delegate. didBegin will be called when collisions occur.
+        physicsWorld.contactDelegate = self
+        
+        // Slow down gravity
+        physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
+        
+        //Adds three buckets
+        addBucket(bucketName: "trashBucket", startingPosition: CGPoint(x: -300, y: -600), size: CGPoint(x: 200, y: 300))
+        addBucket(bucketName: "recyclingBucket", startingPosition: CGPoint(x: -100, y: -600), size: CGPoint(x: 200, y: 300))
+        addBucket(bucketName: "compostBucket", startingPosition: CGPoint(x: 100, y: -600), size: CGPoint(x: 200, y: 300))
+        
+        //For testing purposes, add one of each kind of trash, later randomize it
+        var i = 0
+        for trashImageName in trashImageNames {
+            addPiece(imageName:trashImageName, nodeName: "trash", startingPosition: CGPoint(x:75 * i, y: 600))
+            i += 1
+        }
+        //var i = 0
+        for compostImageName in compostImageNames {
+                addPiece(imageName:compostImageName, nodeName: "compost", startingPosition: CGPoint(x:35 * i, y: 600))
+                i += 1
+            }
+         //   var i = 0
+            for recyclingImageName in recyclingImageNames {
+                addPiece(imageName:recyclingImageName, nodeName: "recycling", startingPosition: CGPoint(x:35 * i, y: 600))
+                i += 1
+        }
+        
+        // Get label node from scene and store it for use later
+        self.label = self.childNode(withName: "//titleLabel") as? SKLabelNode
+        if let label = self.label {
+            label.alpha = 0.0
+            label.run(SKAction.fadeIn(withDuration: 2.0))
+        }
+    }
+        
     // called when drag begins
     func touchBegin(atPoint pos : CGPoint) {
         let node = atPoint(pos)
@@ -117,7 +166,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func touchEnd(atPoint pos : CGPoint) {
         caughtTrash = nil
     }
-    
+        
     // called by system when drag begins
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
@@ -145,7 +194,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             touchEnd(atPoint:touch.location(in: self))
         }
     }
-    
+
     // collision handeler
     func didBegin(_ contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody
@@ -195,5 +244,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+
+
+
+
 }
+
 
