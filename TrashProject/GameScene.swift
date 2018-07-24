@@ -25,6 +25,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
     ]
+    private let recycleImageNames = ["Bottle", "Can"]
+    private let compostImageNames = ["AppleCore", "Banana"]
     
     override func didMove(to view: SKView) {
         // Set self as the contact delegate. didBegin will be called when collisions occur.
@@ -41,7 +43,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //For testing purposes, add one of each kind of trash, later randomize it
         var i = 0
         for trashImageName in trashImageNames {
-            addPiece(imageName:trashImageName, nodeName: "trash", startingPosition: CGPoint(x:75 * i, y: 600))
+            addPiece(imageName:trashImageName, nodeName: "trash", startingPosition: CGPoint(x:75 * i, y: 650))
             i += 1
         }
         
