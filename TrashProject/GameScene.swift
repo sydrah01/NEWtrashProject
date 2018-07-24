@@ -35,8 +35,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "milkCarton"
     ]
     private let recyclingImageNames = [
-    " "
-        
+    "can",
+    "car",
+    "carpet",
+    "drink",
+    "etrash",
+    "fluolight",
+    "fridge",
+    "mattress",
+    "paintcans",
+    "paper",
+    "tires",
+
     ]
     
     private let compostImageNames = [
