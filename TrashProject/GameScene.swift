@@ -61,9 +61,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "toothpick",
         "pizzaBox"
         ]
+   
+    
         //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
     
-    
+    var highScore: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "highScore")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "highScore")
+        }
+    }
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
     // Node name should be "trash" or "recycling" or "compost"
     func addPiece(imageName: String, nodeName: String, startingPosition: CGPoint) {
