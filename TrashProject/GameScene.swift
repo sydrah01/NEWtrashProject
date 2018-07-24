@@ -17,6 +17,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var label : SKLabelNode?
     
+    private var points: Int = 0
+    
     private var caughtTrash : SKNode?
     
     private let trashImageNames = [
@@ -207,6 +209,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let isCorrectBucket = pieceName + "Bucket" == bucketName
             if isCorrectBucket {
                 firstBody.node!.removeFromParent()
+                points += 1 //adding one point
             }
         }
     }
