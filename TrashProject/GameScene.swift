@@ -22,17 +22,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private let trashImageNames = [
         "diapers",
         "straws",
-        "candywrappers",
-        "styrofoamcups",
-        "lightbulbs",
-        "shots",
-        "newspapers",
-        "paperbags",
+        "candyWrapper",
+        "paperCup",
+        "lightBulb",
+        "shot-needle-clipart-1",
+        "neswpaper",
+        "paperBag",
         "envelopes",
-        "cardboardboxes",
-        "pizzaboxes",
-        "cerealboxes",
-        "milkcartons",
+        "cardboardBox",
+        "pizzaBox",
+        "cerealBox",
+        "milkCarton",
         
         
         
