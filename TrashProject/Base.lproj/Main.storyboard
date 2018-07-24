@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="diC-db-ed4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="78"/>
+            <point key="canvasLocation" x="-634" y="12"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -187,8 +186,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Avacado pits are compostable." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7bq-vd-mpL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Avacado pits are compostable." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7bq-vd-mpL">
                                 <rect key="frame" x="255" y="125" width="120" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -318,8 +318,9 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-SP-Gva">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-SP-Gva">
                                 <rect key="frame" x="314" y="608" width="45" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -344,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86M-jA-iad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321" y="78"/>
+            <point key="canvasLocation" x="812" y="34"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="upf-F3-t9Z">
@@ -535,10 +536,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzm-bg-m7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="78"/>
+            <point key="canvasLocation" x="1516" y="34"/>
         </scene>
     </scenes>
     <resources>
+        <image name="appleCore" width="98" height="144"/>
+        <image name="avocadoPits" width="1506" height="1740"/>
+        <image name="can" width="144" height="185"/>
+        <image name="candyWrapper" width="144" height="108"/>
+        <image name="cardboardBox" width="144" height="107"/>
+        <image name="carpet" width="222" height="222"/>
+        <image name="cerealBox" width="144" height="174"/>
+        <image name="diapers" width="144" height="115"/>
+        <image name="drink" width="50" height="107"/>
+        <image name="eggCarton" width="150" height="82"/>
+        <image name="eggShells" width="150" height="106"/>
+        <image name="envelopes" width="144" height="92"/>
+        <image name="etrash" width="144" height="115"/>
+        <image name="fluolight" width="144" height="230"/>
+        <image name="foodWaste" width="146" height="130"/>
+        <image name="fridge" width="144" height="144"/>
+        <image name="leaf" width="150" height="100"/>
+        <image name="lightBulb" width="144" height="256"/>
+        <image name="mattress" width="144" height="86"/>
+        <image name="milkCarton" width="144" height="172"/>
+        <image name="muffinWraper" width="144" height="144"/>
+        <image name="newspapers" width="144" height="105"/>
+        <image name="paintcans" width="80" height="70"/>
         <image name="paperBag" width="144" height="96"/>
         <image name="paperCup" width="144" height="144"/>
         <image name="peanuts" width="340" height="102"/>
@@ -548,4 +572,8 @@
         <image name="tires" width="120" height="111"/>
         <image name="toothpick" width="150" height="167"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="uhi-8w-ZrR"/>
+        <segue reference="Rne-1O-ksI"/>
+    </inferredMetricsTieBreakers>
 </document>
