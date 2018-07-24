@@ -34,21 +34,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private let recycleImageNames = [
         "can", "car", "carpet", "drink", "etrash", "fluolight", "fridge", "mattress", "paintcans", "paper","tires"
 ]
-    private let compostImageNames = ["appleCore", "bananaPeel"]
     
     
     private let compostImageNames = [
-        "peanuts",
-        "appleCore",
-        "avacadoPits",
-        "eggCarton",
-        "eggShells",
-        "foosWaste",
-        "leaf",
-        "muffinWrapper",
-        "peanuts",
-        "toothpick",
-        "pizzaBox"
+        "peanuts", "appleCore", "avacadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
         ]
    
     
@@ -70,7 +59,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             addPiece(imageName:trashImageName, nodeName: "trash", startingPosition: CGPoint(x:75 * i, y: 650))
             i += 1
         }
-        set {
+        Set {
             UserDefaults.standard.set(newValue, forKey: "highScore")
         }
     }
@@ -134,7 +123,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 i += 1
             }
          //   var i = 0
-            for recyclingImageName in recyclingImageNames {
+        for recyclingImageName in recycleImageNames {
                 addPiece(imageName:recyclingImageName, nodeName: "recycling", startingPosition: CGPoint(x:35 * i, y: 600))
                 i += 1
         }
