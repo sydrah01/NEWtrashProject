@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3mb-hN-Gdf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0vf-Mu-UEq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,42 +12,39 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="Uyc-nU-mct">
+        <scene sceneID="6EL-7g-vrw">
             <objects>
-                <viewController id="3mb-hN-Gdf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oCL-SZ-IAB">
+                <viewController id="0vf-Mu-UEq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ccq-x9-WJB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Catch the trash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exT-Sp-gBI">
-                                <rect key="frame" x="166" y="99" width="118" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0X-OA-d0i">
+                                <rect key="frame" x="169" y="348" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boS-oq-xUc">
-                                <rect key="frame" x="160" y="438" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Index"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" red="1" green="0.59567481259999999" blue="0.54336328280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="uwJ-vv-icj" kind="show" id="nBU-kd-eaK"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="wjc-lX-Nbs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygq-jf-XDg">
-                                <rect key="frame" x="172" y="310" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRM-gS-dTY">
+                                <rect key="frame" x="165" y="415" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="play"/>
+                                <state key="normal" title="INDEX">
+                                    <color key="titleColor" red="1" green="0.59567481259999999" blue="0.54336328280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="Do0-RF-Ecw"/>
+                                    <segue destination="uwJ-vv-icj" kind="show" id="BBI-OU-rLm"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ZHA-O6-LyB"/>
+                        <viewLayoutGuide key="safeArea" id="vrS-jv-mI7"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EwH-wt-BVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="diC-db-ed4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-79" y="78"/>
         </scene>
@@ -64,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="77.811094452773617"/>
+            <point key="canvasLocation" x="26" y="34"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4g6-zT-DBA">
@@ -74,14 +71,105 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car" translatesAutoresizingMaskIntoConstraints="NO" id="akW-6z-bXn">
-                                <rect key="frame" x="-4" y="298" width="78" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="INDEX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMr-UW-sHp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="58"/>
+                                <color key="backgroundColor" red="1" green="0.59567481259999999" blue="0.54336328280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="tires" translatesAutoresizingMaskIntoConstraints="NO" id="eqV-pZ-lLo">
+                                <rect key="frame" x="20" y="521" width="69" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Index" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMr-UW-sHp">
-                                <rect key="frame" x="150" y="48" width="75" height="39"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="toothpick" translatesAutoresizingMaskIntoConstraints="NO" id="WtM-CC-xO5">
+                                <rect key="frame" x="175" y="574" width="82" height="78"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="straw" translatesAutoresizingMaskIntoConstraints="NO" id="0Av-qG-fVE">
+                                <rect key="frame" x="175" y="451" width="91" height="68"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="shot-needle-clipart-1" translatesAutoresizingMaskIntoConstraints="NO" id="GV7-Em-1y7">
+                                <rect key="frame" x="3" y="375" width="92" height="68"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="pizzaBox" translatesAutoresizingMaskIntoConstraints="NO" id="b8l-NL-Diq">
+                                <rect key="frame" x="165" y="290" width="82" height="82"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="peanuts" translatesAutoresizingMaskIntoConstraints="NO" id="6hv-r0-JY5">
+                                <rect key="frame" x="-11" y="228" width="124" height="91"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="paperCup" translatesAutoresizingMaskIntoConstraints="NO" id="yDJ-Q8-B7j">
+                                <rect key="frame" x="184" y="153" width="77" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="paperBag" translatesAutoresizingMaskIntoConstraints="NO" id="olJ-Wi-esl">
+                                <rect key="frame" x="0.0" y="98" width="107" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toothpicks are compostable." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tM-nT-d78">
+                                <rect key="frame" x="265" y="566" width="106" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tyres are recyclable." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ela-VL-HmT">
+                                <rect key="frame" x="96" y="502" width="121" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sharps should be handled with care, wrapped, and thrown in the trash." lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OR1-QE-fRg">
+                                <rect key="frame" x="85" y="362" width="201" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Straws go in the trash." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqo-rk-bFG">
+                                <rect key="frame" x="271" y="438" width="102" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Greasy pizza boxes go in the compost." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKY-nK-b3n">
+                                <rect key="frame" x="259" y="274" width="120" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Styrofoam cups go in the trash." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7a-es-qi1">
+                                <rect key="frame" x="263" y="137" width="106" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-cb-fRD">
+                                <rect key="frame" x="22" y="622" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="0.59567481259999999" blue="0.54336328280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Peanut shells are compostable." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGY-am-fS6">
+                                <rect key="frame" x="85" y="228" width="134" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paper bags are recyclable." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LND-CN-ddp">
+                                <rect key="frame" x="101" y="86" width="169" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -247,13 +335,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="RLw-SP-Gva" secondAttribute="bottom" constant="20" symbolic="YES" id="6wu-Zr-fRp"/>
-                            <constraint firstItem="d7e-gM-MZL" firstAttribute="leading" secondItem="hVS-KL-Cif" secondAttribute="leading" constant="71" id="7Qh-qR-NRq"/>
-                            <constraint firstItem="7bq-vd-mpL" firstAttribute="leading" secondItem="d7e-gM-MZL" secondAttribute="trailing" constant="70" id="K6S-hr-z5l"/>
-                            <constraint firstItem="hVS-KL-Cif" firstAttribute="trailing" secondItem="RLw-SP-Gva" secondAttribute="trailing" constant="16" id="OGX-by-CFg"/>
-                            <constraint firstItem="RLw-SP-Gva" firstAttribute="leading" secondItem="hVS-KL-Cif" secondAttribute="leading" constant="314" id="Vgy-We-cmt"/>
-                            <constraint firstItem="7bq-vd-mpL" firstAttribute="trailing" secondItem="hVS-KL-Cif" secondAttribute="trailing" id="h5j-Nn-FSn"/>
-                            <constraint firstItem="RLw-SP-Gva" firstAttribute="trailing" secondItem="BHr-nH-g4W" secondAttribute="trailingMargin" id="qMY-2l-Pi0"/>
+                            <constraint firstItem="JMr-UW-sHp" firstAttribute="trailing" secondItem="hVS-KL-Cif" secondAttribute="trailing" id="7Gw-ws-PRC"/>
+                            <constraint firstItem="JMr-UW-sHp" firstAttribute="leading" secondItem="hVS-KL-Cif" secondAttribute="leading" id="HfU-bI-9Gu"/>
+                            <constraint firstItem="JMr-UW-sHp" firstAttribute="top" secondItem="hVS-KL-Cif" secondAttribute="top" id="Nsl-TP-Elp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hVS-KL-Cif"/>
                     </view>
@@ -455,33 +539,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appleCore" width="98" height="144"/>
-        <image name="avocadoPits" width="1506" height="1740"/>
-        <image name="can" width="144" height="185"/>
-        <image name="candyWrapper" width="144" height="108"/>
-        <image name="car" width="144" height="65"/>
-        <image name="cardboardBox" width="144" height="107"/>
-        <image name="carpet" width="222" height="222"/>
-        <image name="cerealBox" width="144" height="174"/>
-        <image name="diapers" width="144" height="115"/>
-        <image name="drink" width="50" height="107"/>
-        <image name="eggCarton" width="150" height="82"/>
-        <image name="eggShells" width="150" height="106"/>
-        <image name="envelopes" width="144" height="92"/>
-        <image name="etrash" width="144" height="115"/>
-        <image name="fluolight" width="144" height="230"/>
-        <image name="foodWaste" width="146" height="130"/>
-        <image name="fridge" width="144" height="144"/>
-        <image name="leaf" width="150" height="100"/>
-        <image name="lightBulb" width="144" height="256"/>
-        <image name="mattress" width="144" height="86"/>
-        <image name="milkCarton" width="144" height="172"/>
-        <image name="muffinWraper" width="144" height="144"/>
-        <image name="newspapers" width="144" height="105"/>
-        <image name="paintcans" width="80" height="70"/>
+        <image name="paperBag" width="144" height="96"/>
+        <image name="paperCup" width="144" height="144"/>
+        <image name="peanuts" width="340" height="102"/>
+        <image name="pizzaBox" width="180" height="128"/>
+        <image name="shot-needle-clipart-1" width="144" height="166"/>
+        <image name="straw" width="144" height="115"/>
+        <image name="tires" width="120" height="111"/>
+        <image name="toothpick" width="150" height="167"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="uhi-8w-ZrR"/>
-        <segue reference="Rne-1O-ksI"/>
-    </inferredMetricsTieBreakers>
 </document>
