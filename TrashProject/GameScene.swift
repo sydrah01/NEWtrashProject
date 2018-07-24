@@ -23,6 +23,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "diapers",
         "straw"
         
+        
+        
         //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
     ]
     
