@@ -21,8 +21,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private let trashImageNames = [
         "diapers",
-        "straw"
-        
+        "straw",
+        "candyWrapper",
+        "paperCup",
+        "lightBulb",
+        "shot-needle-clipart-1",
+        "neswpaper",
+        "paperBag",
+        "envelopes",
+        "cardboardBox",
+        "cerealBox",
+        "milkCarton"
     ]
     private let recyclingImageNames = [
     "can",
@@ -36,7 +45,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     "paintcans",
     "paper",
     "tires",
-    
+
     ]
     
     private let compostImageNames = [
@@ -49,7 +58,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "leaf",
         "muffinWrapper",
         "peanuts",
-        "toothpick"
+        "toothpick",
+        "pizzaBox"
         ]
         //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
     
