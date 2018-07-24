@@ -27,11 +27,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "lightBulb",
         "shot-needle-clipart-1",
         "neswpaper",
-        "paperBag",
-        "envelopes",
-        "cardboardBox",
-        "cerealBox",
-        "milkCarton"
     ]
     private let recyclingImageNames = [
     "can",
@@ -45,7 +40,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     "paintcans",
     "paper",
     "tires",
-
+    "paperBag",
+    "envelopes",
+    "cardboardBox",
+    "cerealBox",
+    "milkCarton"
     ]
     
     private let compostImageNames = [
