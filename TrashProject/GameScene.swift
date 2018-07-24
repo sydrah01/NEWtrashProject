@@ -30,7 +30,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "paperBag",
         "envelopes",
         "cardboardBox",
-        "pizzaBox",
         "cerealBox",
         "milkCarton"
     ]
@@ -59,7 +58,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         "leaf",
         "muffinWrapper",
         "peanuts",
-        "toothpick"
+        "toothpick",
+        "pizzaBox"
         ]
         //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
     
