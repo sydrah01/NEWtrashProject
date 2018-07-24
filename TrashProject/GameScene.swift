@@ -19,14 +19,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var caughtTrash : SKNode?
     
+    /*
+    var highScoreLabel = SKLabelNode()
+    var highScore = UserDefaults().integer(forKey: "HIGHSCORE")
+    */
+    
     private let trashImageNames = [
         "diapers",
         "straw",
         "candyWrapper",
         "paperCup",
         "lightBulb",
-        "shot-needle-clipart-1",
-        "neswpaper",
+        "shot-needle-clipart-1"
+  
     ]
     private let recyclingImageNames = [
     "can",
@@ -44,7 +49,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     "envelopes",
     "cardboardBox",
     "cerealBox",
-    "milkCarton"
+    "milkCarton",
+    "neswpaper"
     ]
     
     private let compostImageNames = [
@@ -64,14 +70,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
         //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
     
-    var highScore: Int {
-        get {
-            return UserDefaults.standard.integer(forKey: "highScore")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "highScore")
-        }
-    }
+
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
     // Node name should be "trash" or "recycling" or "compost"
     func addPiece(imageName: String, nodeName: String, startingPosition: CGPoint) {
@@ -142,6 +141,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
+        /*
+        highScoreLabel.text = "HIGH SCORE = \(UserDefaults().integer(forKey: "HIGHSCORE"))"
+        highScoreLabel.position = CGPoint(x: 120, y: 20)
+        addChild(highScoreLabel)
+        highScoreLabel.zPosition = 6
+        */
     }
         
     // called when drag begins
