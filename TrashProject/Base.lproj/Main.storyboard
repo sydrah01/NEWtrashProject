@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -187,8 +186,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Avacado pits are compostable." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7bq-vd-mpL">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Avacado pits are compostable." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7bq-vd-mpL">
                                 <rect key="frame" x="255" y="125" width="120" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -318,15 +318,13 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-SP-Gva">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-SP-Gva">
                                 <rect key="frame" x="314" y="608" width="45" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="6QR-XD-yCo" kind="show" id="9eR-99-abm"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="drink" translatesAutoresizingMaskIntoConstraints="NO" id="72t-Wt-fIi">
                                 <rect key="frame" x="196" y="459" width="47" height="74"/>
@@ -344,10 +342,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="86M-jA-iad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736.79999999999995" y="33.733133433283363"/>
+            <point key="canvasLocation" x="1012" y="34"/>
         </scene>
     </scenes>
     <resources>
+        <image name="appleCore" width="98" height="144"/>
+        <image name="avocadoPits" width="1506" height="1740"/>
+        <image name="can" width="144" height="185"/>
+        <image name="candyWrapper" width="144" height="108"/>
+        <image name="cardboardBox" width="144" height="107"/>
+        <image name="carpet" width="222" height="222"/>
+        <image name="cerealBox" width="144" height="174"/>
+        <image name="diapers" width="144" height="115"/>
+        <image name="drink" width="50" height="107"/>
+        <image name="eggCarton" width="150" height="82"/>
+        <image name="eggShells" width="150" height="106"/>
         <image name="paperBag" width="144" height="96"/>
         <image name="paperCup" width="144" height="144"/>
         <image name="peanuts" width="340" height="102"/>
@@ -357,4 +366,7 @@
         <image name="tires" width="120" height="111"/>
         <image name="toothpick" width="150" height="167"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rne-1O-ksI"/>
+    </inferredMetricsTieBreakers>
 </document>
