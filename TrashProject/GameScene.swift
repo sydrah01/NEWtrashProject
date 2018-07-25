@@ -50,8 +50,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     var i : Int = 0
     
-    var numCorrect: Int = 0
-    var numIncorrect: Int = 0
+    //var numCorrect: Int = 0
+   // var numIncorrect: Int = 0
     
 
 
@@ -107,7 +107,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     private let allPieces = [
         Piece(name: "diapers", type:.trash),
         Piece(name: "straw", type:.trash),
-        Piece(name: "candyWrapper", type:.trash),
+        Piece(name: "candyWrapper", type:.trash),//Teacher suggests type should be string
         Piece(name: "paperCup", type:.trash),
         Piece(name: "oldBulb", type:.trash),
         Piece(name: "shotNeedle", type:.trash),
@@ -194,9 +194,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         
         //Adds three buckets
-        addBucket(bucketName: "trashBucket", startingPosition: CGPoint(x: -355, y: -600), size: CGPoint(x: 235, y: 300))
-        addBucket(bucketName: "recyclingBucket", startingPosition: CGPoint(x: -120, y: -600), size: CGPoint(x: 235, y: 300))
-        addBucket(bucketName: "compostBucket", startingPosition: CGPoint(x: 115, y: -600), size: CGPoint(x: 235, y: 300))
+        addBucket(bucketName: "trash", startingPosition: CGPoint(x: -355, y: -600), size: CGPoint(x: 235, y: 300))
+        addBucket(bucketName: "recycling", startingPosition: CGPoint(x: -120, y: -600), size: CGPoint(x: 235, y: 300))
+        addBucket(bucketName: "compost", startingPosition: CGPoint(x: 115, y: -600), size: CGPoint(x: 235, y: 300))
     }
     
     func startDroppingPieces() {
@@ -224,7 +224,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     }
     
 
-      
+        //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
+    
 
 
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
@@ -360,6 +361,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
+        func performSegue(withIdentifier identifier: String,sender: Any?){
+            
+        }
         
         //if a piece hits its corrosponding bucket, it will disapear.
         if firstBody.categoryBitMask == pieceCategory {
@@ -368,15 +372,37 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                 let pieceName = firstBody.node!.name!
                 let bucketName = secondBody.node!.name!
                 let isCorrectBucket = pieceName + "Bucket" == bucketName
-                if isCorrectBucket {
+                
+                if(piece.type == bucketName){ //Teacher says this should be the if statement by .type is not a string
                     firstBody.node!.removeFromParent()
                     score += 1 //adding one point
+                    print(score)
                 }
+                    
+                    
+                //this is original code
+                /*if isCorrectBucket {
+                    firstBody.node!.removeFromParent()
+                    score += 1 //adding one point
+                    print(score)
+                }*/
 
                 else{
                     firstBody.node!.removeFromParent()
                     lives -= 1 //subtracting one point
+                    print(lives)
+                    if(lives==0) {
+                        performSegue(withIdentifier: "performSegue", sender: nil)//takes us to the next window
+                        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                            if(segue.identifier == "performSegue") {
+                                let vc = segue.destination as! GameViewController
+                                vc.highScore = highScore
+                                vc.score = score
+                            }
+                    }
                     
+                }
+
             }
             case boundaryCategory:
                 firstBody.node!.removeFromParent()
