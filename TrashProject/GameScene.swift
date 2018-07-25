@@ -88,6 +88,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
     }
 
+   
     override func didMove(to view: SKView) {
         setupGameWorld()
         
@@ -104,6 +105,13 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         lives = 3
         score = 0
+        
+        /*if (lives == 3){
+            stop the startDroppingPieces function
+         and segue to the scoreBoard
+            // let vc = segue.destination as! ScoreBoard
+        }*/
+        
         
         // A wall to the garbage doesnt go past the trash cans.
         let boundaryWall = frame.insetBy(dx:-500, dy:-500)
@@ -197,7 +205,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         addChild(scoreLabel)
     }
-        
+    
+   
+    
     /*    // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//titleLabel") as? SKLabelNode
         if let label = self.label {
@@ -280,10 +290,13 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                     firstBody.node!.removeFromParent()
                     score += 1 //adding one point
                 }
+
                 else{
                     firstBody.node!.removeFromParent()
                     lives -= 1 //subtracting one point
                 }
+
+                
             case boundaryCategory:
                 firstBody.node!.removeFromParent()
             default:
