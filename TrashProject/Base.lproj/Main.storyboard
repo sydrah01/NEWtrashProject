@@ -45,7 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="diC-db-ed4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-634" y="12"/>
+            <point key="canvasLocation" x="-841" y="34"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -70,13 +70,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-cb-fRD">
-                                <rect key="frame" x="22" y="622" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" red="1" green="0.59567481259999999" blue="0.54336328280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appleCore" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-nG-Zbt">
                                 <rect key="frame" x="16" y="118" width="56" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -249,6 +242,13 @@
                                 <rect key="frame" x="190" y="390" width="53" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-cb-fRD">
+                                <rect key="frame" x="27" y="617" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="1" green="0.59567481259999999" blue="0.54336328280000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hVS-KL-Cif"/>
@@ -450,7 +450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzm-bg-m7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="34"/>
+            <point key="canvasLocation" x="1737" y="34"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="I0B-7h-nHx">
@@ -600,7 +600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Qk-MH-uya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2197.5999999999999" y="33.733133433283363"/>
+            <point key="canvasLocation" x="2582" y="34"/>
         </scene>
     </scenes>
     <resources>
@@ -639,8 +639,7 @@
         <image name="toothpick" width="150" height="167"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="faC-Pd-FhS"/>
-        <segue reference="ewi-D5-cwL"/>
+        <segue reference="9eR-99-abm"/>
         <segue reference="uhi-8w-ZrR"/>
         <segue reference="Rne-1O-ksI"/>
     </inferredMetricsTieBreakers>
