@@ -280,6 +280,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                     firstBody.node!.removeFromParent()
                     score += 1 //adding one point
                 }
+
+                
             case boundaryCategory:
                 firstBody.node!.removeFromParent()
             default:
