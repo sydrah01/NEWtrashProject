@@ -50,8 +50,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     var i : Int = 0
     
-    var numCorrect: Int = 0
-    var numIncorrect: Int = 0
+    //var numCorrect: Int = 0
+   // var numIncorrect: Int = 0
     
 
 
@@ -187,7 +187,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     }
     
 
-      
+        //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
+    
 
 
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
@@ -323,6 +324,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
+        func performSegue(withIdentifier identifier: String,sender: Any?){
+            
+        }
         
         //if a piece hits its corrosponding bucket, it will disapear.
         if firstBody.categoryBitMask == pieceCategory {
@@ -331,6 +335,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                 let pieceName = firstBody.node!.name!
                 let bucketName = secondBody.node!.name!
                 let isCorrectBucket = pieceName + "Bucket" == bucketName
+                
                 if isCorrectBucket {
                     firstBody.node!.removeFromParent()
                     score += 1 //adding one point
@@ -340,6 +345,18 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                     firstBody.node!.removeFromParent()
                     lives -= 1 //subtracting one point
                     
+                    if(lives==0) {
+                        performSegue(withIdentifier: "performSegue", sender: nil)
+                        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                            if(segue.identifier == "performSegue") {
+                                let vc = segue.destination as! GameViewController
+                                vc.highScore = highScore
+                                vc.score = score
+                            }
+                    }
+                    
+                }
+
             }
             case boundaryCategory:
                 firstBody.node!.removeFromParent()

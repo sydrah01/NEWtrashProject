@@ -58,7 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
-                        <segue destination="V4r-6m-LeU" kind="show" identifier="sgShowResults" id="xFj-1b-rQK"/>
+                        <segue destination="V4r-6m-LeU" kind="show" identifier="performSegue" id="xFj-1b-rQK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -96,6 +96,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="sgShowResults"/>
                         <viewLayoutGuide key="safeArea" id="y4B-SF-UNG"/>
                     </view>
                 </viewController>
@@ -673,7 +674,7 @@
         <image name="toothpick" width="150" height="167"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9eR-99-abm"/>
+        <segue reference="ewi-D5-cwL"/>
         <segue reference="uhi-8w-ZrR"/>
         <segue reference="Rne-1O-ksI"/>
     </inferredMetricsTieBreakers>
