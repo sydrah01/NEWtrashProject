@@ -46,7 +46,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         
-        if(numIncorrect>3){
+        if(numIncorrect < 3){
         //this is (supposed to be) a wall to the garbage doesnt go past the trash cans
        // self.physicsBody = [SKPhysicsBody, bodyWithEdgeLoopFromRect,:self.frame];
         
