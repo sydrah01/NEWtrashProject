@@ -9,6 +9,19 @@
 import SpriteKit
 import GameplayKit
 
+// The type of a piece.
+enum PieceType: String {
+    case compost = "compost"
+    case recycling = "recycling"
+    case trash = "trash"
+}
+
+// An individual piece of trash
+struct Piece {
+    let name: String
+    let type: PieceType
+}
+
 class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     // Define collision cetegories
@@ -39,9 +52,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
     
-    
-    
-    
     private let trashImageNames = ["diapers", "straw"]
     
     private let recycleImageNames = [
@@ -52,6 +62,17 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         "peanuts", "appleCore", "avacadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
         ]
    
+    private let allPieces = [
+        // Trash
+        Piece(name: "diapers", type:.trash),
+        Piece(name: "straw", type:.trash),
+        
+        // Recycling
+        Piece(name: "can", type:.recycling),
+        
+        // Compost
+        Piece(name: "peanuts", type:.compost)
+    ]
     
     override func didMove(to view: SKView) {
         
@@ -122,12 +143,14 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     ///////////////////////////////////////////////////////////////CLASS BREAKS HERE
     
     func addRandomPiece() {
+        // Pick a random piece
+        let piece = allPieces[Int(arc4random_uniform(UInt32(allPieces.count)))]
         
         // Picks a random number between frame.minX and frame.maxX
         let x = CGFloat(arc4random_uniform(UInt32(frame.width))) + frame.minX
         
-        addPiece(imageName: trashImageNames[0],
-                      nodeName: "trash",
+        addPiece(imageName: piece.name,
+                 nodeName: piece.type.rawValue,
                       startingPosition: CGPoint(x:x, y: frame.maxY))
 
     }
