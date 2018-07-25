@@ -72,8 +72,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         "paperCup",
         "oldBulb",
         "shotNeedle"
-  
     ]
+    
     private let recyclingImageNames = [
     "can",
     "car",
@@ -100,7 +100,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     ]
     
     private let compostImageNames = [
-        "peanuts", "appleCore", "avacadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
+        "peanuts", "appleCore", "avocadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
         ]
    
     // TODO: Fill this in with the rest of the pieces.
@@ -142,7 +142,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         // Compost
         Piece(name: "peanuts", type:.compost),
         Piece(name: "appleCore", type:.compost),
-        Piece(name: "avacadoPits", type:.compost),
+        Piece(name: "avocadoPits", type:.compost),
         Piece(name: "eggCarton", type:.compost),
         Piece(name: "eggShells", type:.compost),
         Piece(name: "foodWaste", type:.compost),
