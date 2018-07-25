@@ -66,41 +66,41 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     */
     
     private let trashImageNames = [
-        "diapers",
-        "straw",
         "candyWrapper",
+        "diapers",
         "paperCup",
         "oldBulb",
-        "shotNeedle"
+        "shotNeedle",
+        "straw"
     ]
     
     private let recyclingImageNames = [
+    "bake",
+    "battery",
     "can",
     "car",
+    "cardboardBox",
     "carpet",
+    "cerealBox",
     "drink",
+    "envelopes",
     "etrash",
     "fluolight",
+    "foil",
     "fridge",
     "mattress",
-    "paintcans",
-    "paper",
-    "tires",
-    "paperBag",
-    "envelopes",
-    "cardboardBox",
-    "cerealBox",
     "milkCarton",
     "neswpapers",
-    "Yogogo",
-    "battery",
+    "paintcans",
+    "paper",
+    "paperBag",
     "soda",
-    "foil",
-    "bake"
+    "tires",
+    "yogogo"
     ]
     
     private let compostImageNames = [
-        "peanuts", "appleCore", "avocadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
+         "appleCore", "avocadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "pizzaBox", "toothpick"
         ]
    
     // TODO: Fill this in with the rest of the pieces.
@@ -115,32 +115,31 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
 
         
         // Recycling
+        Piece(name: "bake", type:.recycling),
+        Piece(name: "battery", type:.recycling),
         Piece(name: "can", type:.recycling),
         Piece(name: "car", type:.recycling),
+        Piece(name: "cardboardBox", type:.recycling),
         Piece(name: "carpet", type:.recycling),
+        Piece(name: "cerealBox", type:.recycling),
         Piece(name: "drink", type:.recycling),
+        Piece(name: "envelopes", type:.recycling),
         Piece(name: "etrash", type:.recycling),
         Piece(name: "fluolight", type:.recycling),
+        Piece(name: "foil", type:.recycling),
         Piece(name: "fridge", type:.recycling),
         Piece(name: "mattress", type:.recycling),
         Piece(name: "paintcans", type:.recycling),
         Piece(name: "paper", type:.recycling),
-        Piece(name: "tires", type:.recycling),
         Piece(name: "paperBag", type:.recycling),
-        Piece(name: "envelopes", type:.recycling),
-        Piece(name: "cardboardBox", type:.recycling),
-        Piece(name: "cerealBox", type:.recycling),
         Piece(name: "milkCarton", type:.recycling),
         Piece(name: "newspapers", type:.recycling),
-        Piece(name: "Yogogo", type:.recycling),
-        Piece(name: "battery", type:.recycling),
         Piece(name: "soda", type:.recycling),
-        Piece(name: "foil", type:.recycling),
-        Piece(name: "bake", type:.recycling),
+        Piece(name: "tires", type:.recycling),
+        Piece(name: "yogogo", type:.recycling),
         
         
         // Compost
-        Piece(name: "peanuts", type:.compost),
         Piece(name: "appleCore", type:.compost),
         Piece(name: "avocadoPits", type:.compost),
         Piece(name: "eggCarton", type:.compost),
@@ -149,8 +148,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "leaf", type:.compost),
         Piece(name: "muffinWrapper", type:.compost),
         Piece(name: "peanuts", type:.compost),
-        Piece(name: "toothpick", type:.compost),
         Piece(name: "pizzaBox", type:.compost),
+        Piece(name: "toothpick", type:.compost),
         ]
     
     var highScore: Int{
@@ -265,14 +264,14 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     func setupLabels() {
         livesLabel = SKLabelNode(fontNamed: "Chalkduster")
-        livesLabel.fontSize = 65
+        livesLabel.fontSize = 55
         livesLabel.fontColor = .white
         livesLabel.position = CGPoint(x: frame.minX + 550, y: frame.maxY - 50)
         
         addChild(livesLabel)
         
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
-        scoreLabel.fontSize = 65
+        scoreLabel.fontSize = 55
         scoreLabel.fontColor = .green
         scoreLabel.position = CGPoint(x: frame.maxX - 550, y: frame.maxY - 50)
         
