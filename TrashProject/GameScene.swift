@@ -70,8 +70,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         "straw",
         "candyWrapper",
         "paperCup",
-        "lightBulb",
-        "shot-needle-clipart-1"
+        "oldBulb",
+        "shotNeedle"
   
     ]
     private let recyclingImageNames = [
@@ -91,7 +91,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     "cardboardBox",
     "cerealBox",
     "milkCarton",
-    "neswpaper"
+    "neswpapers",
+    "Yogogo",
+    "battery",
+    "soda",
+    "foil",
+    "bake"
     ]
     
     private let compostImageNames = [
@@ -100,21 +105,54 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
    
     // TODO: Fill this in with the rest of the pieces.
     private let allPieces = [
-        // Trash
         Piece(name: "diapers", type:.trash),
         Piece(name: "straw", type:.trash),
+        Piece(name: "candyWrapper", type:.trash),
+        Piece(name: "paperCup", type:.trash),
+        Piece(name: "oldBulb", type:.trash),
+        Piece(name: "shotNeedle", type:.trash),
+        
+
         
         // Recycling
         Piece(name: "can", type:.recycling),
         Piece(name: "car", type:.recycling),
         Piece(name: "carpet", type:.recycling),
+        Piece(name: "drink", type:.recycling),
+        Piece(name: "etrash", type:.recycling),
+        Piece(name: "fluolight", type:.recycling),
+        Piece(name: "fridge", type:.recycling),
+        Piece(name: "mattress", type:.recycling),
+        Piece(name: "paintcans", type:.recycling),
+        Piece(name: "paper", type:.recycling),
+        Piece(name: "tires", type:.recycling),
+        Piece(name: "paperBag", type:.recycling),
+        Piece(name: "envelopes", type:.recycling),
+        Piece(name: "cardboardBox", type:.recycling),
+        Piece(name: "cerealBox", type:.recycling),
+        Piece(name: "milkCarton", type:.recycling),
+        Piece(name: "newspapers", type:.recycling),
+        Piece(name: "Yogogo", type:.recycling),
+        Piece(name: "battery", type:.recycling),
+        Piece(name: "soda", type:.recycling),
+        Piece(name: "foil", type:.recycling),
+        Piece(name: "bake", type:.recycling),
+        
         
         // Compost
         Piece(name: "peanuts", type:.compost),
-        Piece(name: "appleCore", type:.compost)
-    ]
+        Piece(name: "appleCore", type:.compost),
+        Piece(name: "avacadoPits", type:.compost),
+        Piece(name: "eggCarton", type:.compost),
+        Piece(name: "eggShells", type:.compost),
+        Piece(name: "foodWaste", type:.compost),
+        Piece(name: "leaf", type:.compost),
+        Piece(name: "muffinWrapper", type:.compost),
+        Piece(name: "peanuts", type:.compost),
+        Piece(name: "toothpick", type:.compost),
+        Piece(name: "pizzaBox", type:.compost),
+        ]
     
-
     var highScore: Int{
         get {
             return UserDefaults.standard.integer(forKey: "highScore")
