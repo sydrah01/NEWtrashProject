@@ -70,8 +70,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         "straw",
         "candyWrapper",
         "paperCup",
-        "lightBulb",
-        "shot-needle-clipart-1"
+        "oldBulb",
+        "shotNeedle"
   
     ]
     private let recyclingImageNames = [
@@ -105,7 +105,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
    
     // TODO: Fill this in with the rest of the pieces.
     private let allPieces = [
-        // Trash
         Piece(name: "diapers", type:.trash),
         Piece(name: "straw", type:.trash),
         Piece(name: "candyWrapper", type:.trash),
@@ -150,7 +149,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "toothpick", type:.compost),
         Piece(name: "pizzaBox", type:.compost),    ]
     
-
     var highScore: Int{
         get {
             return UserDefaults.standard.integer(forKey: "highScore")
