@@ -25,8 +25,9 @@ struct Piece {
 class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     // Define collision cetegories
-    private let pieceCategory  : UInt32 = 0x1 << 0
-    private let bucketCategory : UInt32 = 0x1 << 1
+    private let pieceCategory    : UInt32 = 0x1 << 0
+    private let bucketCategory   : UInt32 = 0x1 << 1
+    private let boundaryCategory : UInt32 = 0x1 << 2
     
     private var label : SKLabelNode?
     
@@ -112,12 +113,13 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         lives = 3
         score = 0
         
-        //this is (supposed to be) a wall to the garbage doesnt go past the trash cans
-        // self.physicsBody = [SKPhysicsBody, bodyWithEdgeLoopFromRect,:self.frame];
+        // A wall to the garbage doesnt go past the trash cans.
+        let boundaryWall = frame.insetBy(dx:-500, dy:-500)
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom:boundaryWall)
+        self.physicsBody?.categoryBitMask = boundaryCategory
         
         // Set self as the contact delegate. didBegin will be called when collisions occur.
         physicsWorld.contactDelegate = self
-        
         
         // Slow down gravity
         physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
@@ -159,14 +161,13 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     // Node name should be "trash" or "recycling" or "compost"
     
     func addPiece(imageName: String, nodeName: String, startingPosition: CGPoint) {
-        
         let piece = SKSpriteNode(imageNamed: imageName)
         piece.name = nodeName
         piece.position = startingPosition
         piece.physicsBody = SKPhysicsBody(texture: piece.texture!,
                                           size: piece.texture!.size())
         piece.physicsBody?.categoryBitMask = pieceCategory
-        piece.physicsBody?.contactTestBitMask = pieceCategory | bucketCategory
+        piece.physicsBody?.contactTestBitMask = pieceCategory | bucketCategory | boundaryCategory
         addChild(piece)
     }
     
@@ -279,21 +280,22 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
         
         //if a piece hits its corrosponding bucket, it will disapear.
-        if firstBody.categoryBitMask == pieceCategory &&
-            secondBody.categoryBitMask == bucketCategory {
-            let pieceName = firstBody.node!.name!
-            let bucketName = secondBody.node!.name!
-            let isCorrectBucket = pieceName + "Bucket" == bucketName
-            if isCorrectBucket {
+        if firstBody.categoryBitMask == pieceCategory {
+            switch (secondBody.categoryBitMask) {
+            case bucketCategory:
+                let pieceName = firstBody.node!.name!
+                let bucketName = secondBody.node!.name!
+                let isCorrectBucket = pieceName + "Bucket" == bucketName
+                if isCorrectBucket {
+                    firstBody.node!.removeFromParent()
+                    score += 1 //adding one point
+                }
+            case boundaryCategory:
                 firstBody.node!.removeFromParent()
-                score += 1 //adding one point
+            default:
+                break
             }
-            
         }
-            
-            
-            //But Im still working on the randomizer so ill upload that later
-      
     }
     
     func dropAllTrash(){
