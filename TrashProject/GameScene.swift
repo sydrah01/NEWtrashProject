@@ -9,19 +9,42 @@
 import SpriteKit
 import GameplayKit
 
+// The type of a piece.
+enum PieceType: String {
+    case compost = "compost"
+    case recycling = "recycling"
+    case trash = "trash"
+}
+
+// An individual piece of trash
+struct Piece {
+    let name: String
+    let type: PieceType
+}
+
 class GameScene: SKScene,  SKPhysicsContactDelegate {
- 
-   
-    
-    
     
     // Define collision cetegories
-    private let pieceCategory  : UInt32 = 0x1 << 0
-    private let bucketCategory : UInt32 = 0x1 << 1
+    private let pieceCategory    : UInt32 = 0x1 << 0
+    private let bucketCategory   : UInt32 = 0x1 << 1
+    private let boundaryCategory : UInt32 = 0x1 << 2
     
     private var label : SKLabelNode?
     
-    private var points: Int = 0
+    private var livesLabel : SKLabelNode!
+    private var scoreLabel : SKLabelNode!
+    
+    private var lives : Int = 0 {
+        didSet {
+            livesLabel.text = "Lives: \(lives)"
+        }
+    }
+    
+    private var score: Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     
     private var caughtTrash : SKNode?
     
@@ -29,9 +52,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
-    
-    
-    
     
     private let trashImageNames = ["diapers", "straw"]
     
@@ -43,63 +63,101 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         "peanuts", "appleCore", "avacadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
         ]
    
-    
-    override func didMove(to view: SKView) {
+    // TODO: Fill this in with the rest of the pieces.
+    private let allPieces = [
+        // Trash
+        Piece(name: "diapers", type:.trash),
+        Piece(name: "straw", type:.trash),
         
-        if(numIncorrect>3){
-        //this is (supposed to be) a wall to the garbage doesnt go past the trash cans
-       // self.physicsBody = [SKPhysicsBody, bodyWithEdgeLoopFromRect,:self.frame];
+        // Recycling
+        Piece(name: "can", type:.recycling),
+        Piece(name: "car", type:.recycling),
+        Piece(name: "carpet", type:.recycling),
+        
+        // Compost
+        Piece(name: "peanuts", type:.compost),
+        Piece(name: "appleCore", type:.compost)
+    ]
+    
+    var highScore: Int{
+        get {
+            return UserDefaults.standard.integer(forKey: "highScore")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "highScore")
+        }
+    }
+
+    override func didMove(to view: SKView) {
+        setupGameWorld()
+        
+        //For testing purposes, add one of each kind of trash, later randomize it
+        // dropAllTrash()
+        
+        // Start dropping pieces.
+        startDroppingPieces()
+    }
+    
+    func setupGameWorld() {
+        
+        setupLabels()
+        
+        lives = 3
+        score = 0
+        
+        // A wall to the garbage doesnt go past the trash cans.
+        let boundaryWall = frame.insetBy(dx:-500, dy:-500)
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom:boundaryWall)
+        self.physicsBody?.categoryBitMask = boundaryCategory
         
         // Set self as the contact delegate. didBegin will be called when collisions occur.
         physicsWorld.contactDelegate = self
-        
         
         // Slow down gravity
         physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
         
         
         //Adds three buckets
-        addBucket(bucketName: "trashBucket", startingPosition: CGPoint(x: -300, y: -600), size: CGPoint(x: 200, y: 300))
-        addBucket(bucketName: "recyclingBucket", startingPosition: CGPoint(x: -100, y: -600), size: CGPoint(x: 200, y: 300))
-        addBucket(bucketName: "compostBucket", startingPosition: CGPoint(x: 100, y: -600), size: CGPoint(x: 200, y: 300))
-        
-        
-        //For testing purposes, add one of each kind of trash, later randomize it
-        
-            dropAllTrash()
-        
-        
-       
-        var highScore: Int{
-            get {
-                return UserDefaults.standard.integer(forKey: "highScore")
-            }
-        set {
-           UserDefaults.standard.set(newValue, forKey: "highScore")
-            }
-        }
-        
-    }
-        else{
-            
-        }
+        addBucket(bucketName: "trashBucket", startingPosition: CGPoint(x: -355, y: -600), size: CGPoint(x: 235, y: 300))
+        addBucket(bucketName: "recyclingBucket", startingPosition: CGPoint(x: -120, y: -600), size: CGPoint(x: 235, y: 300))
+        addBucket(bucketName: "compostBucket", startingPosition: CGPoint(x: 115, y: -600), size: CGPoint(x: 235, y: 300))
     }
     
+    func startDroppingPieces() {
+        let wait = SKAction.wait(forDuration: 1) //change drop speed here
+        let block = SKAction.run({
+            [unowned self] in
+            self.addRandomPiece()
+        })
+        let sequence = SKAction.sequence([wait,block])
+        
+        run(SKAction.repeatForever(sequence), withKey: "pieceDropper")
+    }
     
-    ///////////////////////////////////////////////////////////////CLASS BREAKS HERE
+    func addRandomPiece() {
+        // Pick a random piece
+        let piece = allPieces[Int(arc4random_uniform(UInt32(allPieces.count)))]
+        
+        // Picks a random number between frame.minX and frame.maxX
+        let x = CGFloat(arc4random_uniform(UInt32(frame.width))) + frame.minX
+        
+        addPiece(imageName: piece.name,
+                 nodeName: piece.type,
+                      startingPosition: CGPoint(x:x, y: frame.maxY))
+
+    }
     
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
     // Node name should be "trash" or "recycling" or "compost"
     
-    func addPiece(imageName: String, nodeName: String, startingPosition: CGPoint) {
-        
+    func addPiece(imageName: String, nodeName: PieceType, startingPosition: CGPoint) {
         let piece = SKSpriteNode(imageNamed: imageName)
-        piece.name = nodeName
+        piece.name = nodeName.rawValue
         piece.position = startingPosition
         piece.physicsBody = SKPhysicsBody(texture: piece.texture!,
                                           size: piece.texture!.size())
         piece.physicsBody?.categoryBitMask = pieceCategory
-        piece.physicsBody?.contactTestBitMask = pieceCategory | bucketCategory
+        piece.physicsBody?.contactTestBitMask = pieceCategory | bucketCategory | boundaryCategory
         addChild(piece)
     }
     
@@ -124,9 +182,21 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         addChild(bucket)
     }
     
-    
-    
-    
+    func setupLabels() {
+        livesLabel = SKLabelNode(fontNamed: "Chalkduster")
+        livesLabel.fontSize = 65
+        livesLabel.fontColor = .white
+        livesLabel.position = CGPoint(x: frame.minX + 550, y: frame.maxY - 50)
+        
+        addChild(livesLabel)
+        
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.fontSize = 65
+        scoreLabel.fontColor = .green
+        scoreLabel.position = CGPoint(x: frame.maxX - 550, y: frame.maxY - 50)
+        
+        addChild(scoreLabel)
+    }
         
     /*    // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//titleLabel") as? SKLabelNode
@@ -200,47 +270,49 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
         
         //if a piece hits its corrosponding bucket, it will disapear.
-        if firstBody.categoryBitMask == pieceCategory &&
-            secondBody.categoryBitMask == bucketCategory {
-            let pieceName = firstBody.node!.name!
-            let bucketName = secondBody.node!.name!
-            let isCorrectBucket = pieceName + "Bucket" == bucketName
-            if isCorrectBucket {
+        if firstBody.categoryBitMask == pieceCategory {
+            switch (secondBody.categoryBitMask) {
+            case bucketCategory:
+                let pieceName = firstBody.node!.name!
+                let bucketName = secondBody.node!.name!
+                let isCorrectBucket = pieceName + "Bucket" == bucketName
+                if isCorrectBucket {
+                    firstBody.node!.removeFromParent()
+                    score += 1 //adding one point
+                }
+                else{
+                    firstBody.node!.removeFromParent()
+                    lives -= 1 //subtracting one point
+                }
+            case boundaryCategory:
                 firstBody.node!.removeFromParent()
-                points += 1 //adding one point
+            default:
+                break
             }
-            
         }
-            
-            
-            //But Im still working on the randomizer so ill upload that later
-      
     }
     
     func dropAllTrash(){
         var i = 0
         for trashImageName in trashImageNames {
-            addPiece(imageName:trashImageName, nodeName: "trash", startingPosition: CGPoint(x:75 * i, y: 650))
+            addPiece(imageName:trashImageName, nodeName:.trash, startingPosition: CGPoint(x:75 * i, y: 650))
             i += 1
         }
         //var i = 0
         for compostImageName in compostImageNames {
-            addPiece(imageName:compostImageName, nodeName: "compost", startingPosition: CGPoint(x:35 * i, y: 600))
+            addPiece(imageName:compostImageName, nodeName: .compost, startingPosition: CGPoint(x:35 * i, y: 600))
             i += 1
         }
         //   var i = 0
         for recyclingImageName in recycleImageNames {
-            addPiece(imageName:recyclingImageName, nodeName: "recycling", startingPosition: CGPoint(x:35 * i, y: 600))
+            addPiece(imageName:recyclingImageName, nodeName: .recycling, startingPosition: CGPoint(x:35 * i, y: 600))
             i += 1
         }
     }
-    
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
-
-
     
 
 }
