@@ -21,7 +21,20 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     private var label : SKLabelNode?
     
-    private var points: Int = 0
+    private var livesLabel : SKLabelNode!
+    private var scoreLabel : SKLabelNode!
+    
+    private var lives : Int = 0 {
+        didSet {
+            livesLabel.text = "Lives: \(lives)"
+        }
+    }
+    
+    private var score: Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     
     private var caughtTrash : SKNode?
     
@@ -47,21 +60,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         if(numIncorrect < 3){
-        //this is (supposed to be) a wall to the garbage doesnt go past the trash cans
-       // self.physicsBody = [SKPhysicsBody, bodyWithEdgeLoopFromRect,:self.frame];
-        
-        // Set self as the contact delegate. didBegin will be called when collisions occur.
-        physicsWorld.contactDelegate = self
-        
-        
-        // Slow down gravity
-        physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
-        
-        
-        //Adds three buckets
-        addBucket(bucketName: "trashBucket", startingPosition: CGPoint(x: -300, y: -600), size: CGPoint(x: 200, y: 300))
-        addBucket(bucketName: "recyclingBucket", startingPosition: CGPoint(x: -100, y: -600), size: CGPoint(x: 200, y: 300))
-        addBucket(bucketName: "compostBucket", startingPosition: CGPoint(x: 100, y: -600), size: CGPoint(x: 200, y: 300))
+            setupGameWorld()
         
         
         //For testing purposes, add one of each kind of trash, later randomize it
@@ -85,6 +84,29 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
     }
     
+    func setupGameWorld() {
+        
+        setupLabels()
+        
+        lives = 3
+        score = 0
+        
+        //this is (supposed to be) a wall to the garbage doesnt go past the trash cans
+        // self.physicsBody = [SKPhysicsBody, bodyWithEdgeLoopFromRect,:self.frame];
+        
+        // Set self as the contact delegate. didBegin will be called when collisions occur.
+        physicsWorld.contactDelegate = self
+        
+        
+        // Slow down gravity
+        physicsWorld.gravity = CGVector(dx: 0, dy: -1.5)
+        
+        
+        //Adds three buckets
+        addBucket(bucketName: "trashBucket", startingPosition: CGPoint(x: -300, y: -600), size: CGPoint(x: 200, y: 300))
+        addBucket(bucketName: "recyclingBucket", startingPosition: CGPoint(x: -100, y: -600), size: CGPoint(x: 200, y: 300))
+        addBucket(bucketName: "compostBucket", startingPosition: CGPoint(x: 100, y: -600), size: CGPoint(x: 200, y: 300))
+    }
     
     ///////////////////////////////////////////////////////////////CLASS BREAKS HERE
     
@@ -124,9 +146,21 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         addChild(bucket)
     }
     
-    
-    
-    
+    func setupLabels() {
+        livesLabel = SKLabelNode(fontNamed: "Chalkduster")
+        livesLabel.fontSize = 65
+        livesLabel.fontColor = .white
+        livesLabel.position = CGPoint(x: frame.minX + 550, y: frame.maxY - 50)
+        
+        addChild(livesLabel)
+        
+        scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.fontSize = 65
+        scoreLabel.fontColor = .green
+        scoreLabel.position = CGPoint(x: frame.maxX - 550, y: frame.maxY - 50)
+        
+        addChild(scoreLabel)
+    }
         
     /*    // Get label node from scene and store it for use later
         self.label = self.childNode(withName: "//titleLabel") as? SKLabelNode
@@ -207,7 +241,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             let isCorrectBucket = pieceName + "Bucket" == bucketName
             if isCorrectBucket {
                 firstBody.node!.removeFromParent()
-                points += 1 //adding one point
+                score += 1 //adding one point
             }
             
         }
