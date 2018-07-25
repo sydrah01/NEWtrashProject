@@ -63,6 +63,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         "peanuts", "appleCore", "avacadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
         ]
    
+    // TODO: Fill this in with the rest of the pieces.
     private let allPieces = [
         // Trash
         Piece(name: "diapers", type:.trash),
@@ -70,40 +71,31 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         // Recycling
         Piece(name: "can", type:.recycling),
+        Piece(name: "car", type:.recycling),
+        Piece(name: "carpet", type:.recycling),
         
         // Compost
-        Piece(name: "peanuts", type:.compost)
+        Piece(name: "peanuts", type:.compost),
+        Piece(name: "appleCore", type:.compost)
     ]
     
-    override func didMove(to view: SKView) {
-        
-        if(numIncorrect < 3){
-            setupGameWorld()
-        
-        
-            //For testing purposes, add one of each kind of trash, later randomize it
-            // dropAllTrash()
-            
-            
-            // Start dropping piecese
-            startDroppingPieces()
-
-        
-        
-       
-        var highScore: Int{
-            get {
-                return UserDefaults.standard.integer(forKey: "highScore")
-            }
+    var highScore: Int{
+        get {
+            return UserDefaults.standard.integer(forKey: "highScore")
+        }
         set {
-           UserDefaults.standard.set(newValue, forKey: "highScore")
-            }
+            UserDefaults.standard.set(newValue, forKey: "highScore")
         }
-        
     }
-        else{
-            
-        }
+
+    override func didMove(to view: SKView) {
+        setupGameWorld()
+        
+        //For testing purposes, add one of each kind of trash, later randomize it
+        // dropAllTrash()
+        
+        // Start dropping pieces.
+        startDroppingPieces()
     }
     
     func setupGameWorld() {
@@ -142,8 +134,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         run(SKAction.repeatForever(sequence), withKey: "pieceDropper")
     }
     
-    ///////////////////////////////////////////////////////////////CLASS BREAKS HERE
-    
     func addRandomPiece() {
         // Pick a random piece
         let piece = allPieces[Int(arc4random_uniform(UInt32(allPieces.count)))]
@@ -152,7 +142,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         let x = CGFloat(arc4random_uniform(UInt32(frame.width))) + frame.minX
         
         addPiece(imageName: piece.name,
-                 nodeName: piece.type.rawValue,
+                 nodeName: piece.type,
                       startingPosition: CGPoint(x:x, y: frame.maxY))
 
     }
@@ -160,9 +150,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
     // Node name should be "trash" or "recycling" or "compost"
     
-    func addPiece(imageName: String, nodeName: String, startingPosition: CGPoint) {
+    func addPiece(imageName: String, nodeName: PieceType, startingPosition: CGPoint) {
         let piece = SKSpriteNode(imageNamed: imageName)
-        piece.name = nodeName
+        piece.name = nodeName.rawValue
         piece.position = startingPosition
         piece.physicsBody = SKPhysicsBody(texture: piece.texture!,
                                           size: piece.texture!.size())
@@ -301,21 +291,20 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     func dropAllTrash(){
         var i = 0
         for trashImageName in trashImageNames {
-            addPiece(imageName:trashImageName, nodeName: "trash", startingPosition: CGPoint(x:75 * i, y: 650))
+            addPiece(imageName:trashImageName, nodeName:.trash, startingPosition: CGPoint(x:75 * i, y: 650))
             i += 1
         }
         //var i = 0
         for compostImageName in compostImageNames {
-            addPiece(imageName:compostImageName, nodeName: "compost", startingPosition: CGPoint(x:35 * i, y: 600))
+            addPiece(imageName:compostImageName, nodeName: .compost, startingPosition: CGPoint(x:35 * i, y: 600))
             i += 1
         }
         //   var i = 0
         for recyclingImageName in recycleImageNames {
-            addPiece(imageName:recyclingImageName, nodeName: "recycling", startingPosition: CGPoint(x:35 * i, y: 600))
+            addPiece(imageName:recyclingImageName, nodeName: .recycling, startingPosition: CGPoint(x:35 * i, y: 600))
             i += 1
         }
     }
-    //hello
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
