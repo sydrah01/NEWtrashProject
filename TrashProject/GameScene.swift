@@ -10,10 +10,6 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene,  SKPhysicsContactDelegate {
- 
-   
-    
-    
     
     // Define collision cetegories
     private let pieceCategory  : UInt32 = 0x1 << 0
@@ -63,9 +59,13 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             setupGameWorld()
         
         
-        //For testing purposes, add one of each kind of trash, later randomize it
-        
-            dropAllTrash()
+            //For testing purposes, add one of each kind of trash, later randomize it
+            // dropAllTrash()
+            
+            
+            // Start dropping piecese
+            startDroppingPieces()
+
         
         
        
@@ -108,7 +108,29 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         addBucket(bucketName: "compostBucket", startingPosition: CGPoint(x: 100, y: -600), size: CGPoint(x: 200, y: 300))
     }
     
+    func startDroppingPieces() {
+        let wait = SKAction.wait(forDuration: 0.5) //change drop speed here
+        let block = SKAction.run({
+            [unowned self] in
+            self.addRandomPiece()
+        })
+        let sequence = SKAction.sequence([wait,block])
+        
+        run(SKAction.repeatForever(sequence), withKey: "pieceDropper")
+    }
+    
     ///////////////////////////////////////////////////////////////CLASS BREAKS HERE
+    
+    func addRandomPiece() {
+        
+        // Picks a random number between frame.minX and frame.maxX
+        let x = CGFloat(arc4random_uniform(UInt32(frame.width))) + frame.minX
+        
+        addPiece(imageName: trashImageNames[0],
+                      nodeName: "trash",
+                      startingPosition: CGPoint(x:x, y: frame.maxY))
+
+    }
     
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
     // Node name should be "trash" or "recycling" or "compost"
