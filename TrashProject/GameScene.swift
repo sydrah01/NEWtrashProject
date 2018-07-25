@@ -25,14 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
     
-    private let trashImageNames = ["diapers", "straw"
-        //add more types of trash, also add recycling and compost image names, corrosponds to assets/pics
-    ] 
     
-    private let recycleImageNames = [
-        "can", "car", "carpet", "drink", "etrash", "fluolight", "fridge", "mattress", "paintcans", "paper","tires"
-]
-    private let compostImageNames = ["appleCore", "bananaPeel"]
     
     /*
     var highScoreLabel = SKLabelNode()
