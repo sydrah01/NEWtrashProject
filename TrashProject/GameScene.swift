@@ -53,11 +53,46 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     var numCorrect: Int = 0
     var numIncorrect: Int = 0
     
-    private let trashImageNames = ["diapers", "straw"]
+
+
     
     private let recycleImageNames = [
         "can", "car", "carpet", "drink", "etrash", "fluolight", "fridge", "mattress", "paintcans", "paper","tires"]
+
     
+    /*
+    var highScoreLabel = SKLabelNode()
+    var highScore = UserDefaults().integer(forKey: "HIGHSCORE")
+    */
+    
+    private let trashImageNames = [
+        "diapers",
+        "straw",
+        "candyWrapper",
+        "paperCup",
+        "lightBulb",
+        "shot-needle-clipart-1"
+  
+    ]
+    private let recyclingImageNames = [
+    "can",
+    "car",
+    "carpet",
+    "drink",
+    "etrash",
+    "fluolight",
+    "fridge",
+    "mattress",
+    "paintcans",
+    "paper",
+    "tires",
+    "paperBag",
+    "envelopes",
+    "cardboardBox",
+    "cerealBox",
+    "milkCarton",
+    "neswpaper"
+    ]
     
     private let compostImageNames = [
         "peanuts", "appleCore", "avacadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "toothpick", "pizzaBox"
@@ -79,6 +114,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "appleCore", type:.compost)
     ]
     
+
     var highScore: Int{
         get {
             return UserDefaults.standard.integer(forKey: "highScore")
@@ -105,13 +141,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         lives = 3
         score = 0
-        
-        /*if (lives == 3){
-            stop the startDroppingPieces function
-         and segue to the scoreBoard
-            // let vc = segue.destination as! ScoreBoard
-        }*/
-        
+        highScore = 0
+       
         
         // A wall to the garbage doesnt go past the trash cans.
         let boundaryWall = frame.insetBy(dx:-500, dy:-500)
@@ -132,7 +163,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     }
     
     func startDroppingPieces() {
-        let wait = SKAction.wait(forDuration: 1) //change drop speed here
+        let wait = SKAction.wait(forDuration: 3) //change drop speed here
         let block = SKAction.run({
             [unowned self] in
             self.addRandomPiece()
@@ -155,6 +186,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
 
     }
     
+
+      
+
+
     //Adds a piece of trash/recycling/compost to scene. Image name is the Asset picture name.
     // Node name should be "trash" or "recycling" or "compost"
     
@@ -214,7 +249,17 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
         }
+
     }*/
+
+        /*
+        highScoreLabel.text = "HIGH SCORE = \(UserDefaults().integer(forKey: "HIGHSCORE"))"
+        highScoreLabel.position = CGPoint(x: 120, y: 20)
+        addChild(highScoreLabel)
+        highScoreLabel.zPosition = 6
+        */
+    
+
         
     // called when drag begins
     func touchBegin(atPoint pos : CGPoint) {
@@ -294,9 +339,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                 else{
                     firstBody.node!.removeFromParent()
                     lives -= 1 //subtracting one point
-                }
-
-                
+                    
+            }
             case boundaryCategory:
                 firstBody.node!.removeFromParent()
             default:

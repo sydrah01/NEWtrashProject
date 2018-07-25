@@ -11,7 +11,10 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    
+    
+    var highScore: Int = 0
+    var score: Int = 0
     
     
     override func viewDidLoad() {
