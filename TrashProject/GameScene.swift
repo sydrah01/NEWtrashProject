@@ -225,7 +225,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.fontSize = 55
-        scoreLabel.fontColor = .green
+        scoreLabel.fontColor = .black
         scoreLabel.position = CGPoint(x: frame.maxX - 550, y: frame.maxY - 50)
         
         addChild(scoreLabel)
@@ -305,19 +305,20 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                 let bucketName = secondBody.node!.name!
                 
                 if pieceName == bucketName {
-                    removeBody(body: firstBody)
                     score += 1 //adding one point
                     print("score", firstBody, score)
-                } else {
                     removeBody(body: firstBody)
+                } else {
                     lives -= 1 //subtracting one point
                     print("lives", firstBody, lives)
+                    removeBody(body: firstBody)
                     if lives == 0 {
                         self.view?.isPaused = true
                         viewController!.gameEnded(score:score)
                     }
                 }
             case boundaryCategory:
+                // Object has fallen off the the edge of the screen.
                 removeBody(body: firstBody)
             default:
                 break
