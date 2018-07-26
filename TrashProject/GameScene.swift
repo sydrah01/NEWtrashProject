@@ -64,10 +64,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "straw", type:.trash),
         Piece(name: "candyWrapper", type:.trash),//Teacher suggests type should be string
         Piece(name: "paperCup", type:.trash),
-        Piece(name: "oldBulb", type:.trash),
-        Piece(name: "shotNeedle", type:.trash),
+        Piece(name: "lightBulb", type:.trash),
+        Piece(name: "shot-needle-clipart-1", type:.trash),
         
-
         
         // Recycling
         Piece(name: "bake", type:.recycling),
@@ -88,11 +87,11 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "paper", type:.recycling),
         Piece(name: "paperBag", type:.recycling),
         Piece(name: "milkCarton", type:.recycling),
-        Piece(name: "newspapers", type:.recycling),
-        Piece(name: "soda", type:.recycling),
-        Piece(name: "tires", type:.recycling),
-        Piece(name: "yogogo", type:.recycling),
-        
+        Piece(name: "Yogurt", type:.recycling),
+        Piece(name: "battery", type:.recycling),
+        Piece(name: "canAl", type:.recycling),
+        Piece(name: "foil", type:.recycling),
+        Piece(name: "bake", type:.recycling),
         
         // Compost
         Piece(name: "appleCore", type:.compost),
@@ -101,11 +100,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "eggShells", type:.compost),
         Piece(name: "foodWaste", type:.compost),
         Piece(name: "leaf", type:.compost),
-        Piece(name: "muffinWrapper", type:.compost),
+        Piece(name: "amuffinWrapper", type:.compost),
         Piece(name: "peanuts", type:.compost),
-        Piece(name: "pizzaBox", type:.compost),
         Piece(name: "toothpick", type:.compost),
-        ]
+        Piece(name: "pizzaBox", type:.compost),    ]
     
     var highScore: Int{
         get {
