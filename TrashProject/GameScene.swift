@@ -52,58 +52,13 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     //var numCorrect: Int = 0
    // var numIncorrect: Int = 0
-    
-
-
-    
-    private let recycleImageNames = [
-        "can", "car", "carpet", "drink", "etrash", "fluolight", "fridge", "mattress", "paintcans", "paper","tires"]
 
     
     /*
     var highScoreLabel = SKLabelNode()
     var highScore = UserDefaults().integer(forKey: "HIGHSCORE")
     */
-    
-    private let trashImageNames = [
-        "candyWrapper",
-        "diapers",
-        "paperCup",
-        "oldBulb",
-        "shotNeedle",
-        "straw"
-    ]
-    
-    private let recyclingImageNames = [
-    "bake",
-    "battery",
-    "can",
-    "car",
-    "cardboardBox",
-    "carpet",
-    "cerealBox",
-    "drink",
-    "envelopes",
-    "etrash",
-    "fluolight",
-    "foil",
-    "fridge",
-    "mattress",
-    "milkCarton",
-    "neswpapers",
-    "paintcans",
-    "paper",
-    "paperBag",
-    "soda",
-    "tires",
-    "yogogo"
-    ]
-    
-    private let compostImageNames = [
-         "appleCore", "avocadoPits", "eggCarton", "eggShells", "foosWaste", "leaf", "muffinWrapper", "peanuts", "pizzaBox", "toothpick"
-        ]
    
-    // TODO: Fill this in with the rest of the pieces.
     private let allPieces = [
         Piece(name: "diapers", type:.trash),
         Piece(name: "straw", type:.trash),
@@ -164,10 +119,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
    
     override func didMove(to view: SKView) {
         setupGameWorld()
-        
-        //For testing purposes, add one of each kind of trash, later randomize it
-        // dropAllTrash()
-        
+
         // Start dropping pieces.
         startDroppingPieces()
     }
@@ -412,24 +364,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
     }
     
-    func dropAllTrash(){
-        var i = 0
-        for trashImageName in trashImageNames {
-            addPiece(imageName:trashImageName, nodeName:.trash, startingPosition: CGPoint(x:75 * i, y: 650))
-            i += 1
-        }
-        //var i = 0
-        for compostImageName in compostImageNames {
-            addPiece(imageName:compostImageName, nodeName: .compost, startingPosition: CGPoint(x:35 * i, y: 600))
-            i += 1
-        }
-        //   var i = 0
-        for recyclingImageName in recycleImageNames {
-            addPiece(imageName:recyclingImageName, nodeName: .recycling, startingPosition: CGPoint(x:35 * i, y: 600))
-            i += 1
-        }
-    }
-
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
