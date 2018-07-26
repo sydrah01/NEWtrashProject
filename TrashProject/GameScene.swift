@@ -92,7 +92,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "battery", type:.recycling),
         Piece(name: "soda", type:.recycling),
         Piece(name: "foil", type:.recycling),
-        Piece(name: "bake", type:.recycling),
         
         // Compost
         Piece(name: "appleCore", type:.compost),
@@ -191,6 +190,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         piece.physicsBody?.categoryBitMask = pieceCategory
         piece.physicsBody?.contactTestBitMask = pieceCategory | bucketCategory | boundaryCategory
         addChild(piece)
+        
+        print("Added \(piece)")
     }
     
     
@@ -229,27 +230,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         addChild(scoreLabel)
     }
-    
-   
-    
-    /*    // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//titleLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
 
-    }*/
-
-        /*
-        highScoreLabel.text = "HIGH SCORE = \(UserDefaults().integer(forKey: "HIGHSCORE"))"
-        highScoreLabel.position = CGPoint(x: 120, y: 20)
-        addChild(highScoreLabel)
-        highScoreLabel.zPosition = 6
-        */
-    
-
-        
     // called when drag begins
     func touchBegin(atPoint pos : CGPoint) {
         let node = atPoint(pos)
@@ -312,32 +293,42 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        
-        //if a piece hits its corrosponding bucket, it will disapear.
+        // Check for a body having already been removed
+        if firstBody.node?.physicsBody == nil {
+            return
+        }
+        //if a piece hits a bucket, it will disapear.
         if firstBody.categoryBitMask == pieceCategory {
             switch (secondBody.categoryBitMask) {
             case bucketCategory:
                 let pieceName = firstBody.node!.name!
                 let bucketName = secondBody.node!.name!
                 
-                if pieceName == bucketName { //Teacher says this should be the if statement by .type is not a string
-                    firstBody.node!.removeFromParent()
+                if pieceName == bucketName {
+                    removeBody(body: firstBody)
                     score += 1 //adding one point
-                    print(score)
+                    print("score", firstBody, score)
                 } else {
-                    firstBody.node!.removeFromParent()
+                    removeBody(body: firstBody)
                     lives -= 1 //subtracting one point
-                    print(lives)
+                    print("lives", firstBody, lives)
                     if lives == 0 {
                         self.view?.isPaused = true
                         viewController!.gameEnded(score:score)
                     }
                 }
             case boundaryCategory:
-                firstBody.node!.removeFromParent()
+                removeBody(body: firstBody)
             default:
                 break
             }
+        }
+    }
+    
+    func removeBody(body: SKPhysicsBody) {
+        if let node = body.node {
+            node.removeFromParent()
+            node.physicsBody = nil
         }
     }
     
