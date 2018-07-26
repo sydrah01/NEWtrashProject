@@ -112,14 +112,43 @@
                                     <segue destination="BV1-FR-VrT" kind="show" id="pZ9-Vm-5Uu"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="CJg-6f-fPH">
-                                <rect key="frame" x="64" y="139" width="246" height="257"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-zq-ctW">
+                                <rect key="frame" x="64" y="104" width="246" height="158.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">We wanted to make a game that teaches people what to recycle and compost. Many people, if they don't know where to throw things away, will just throw it in the trash, intead of the recycling or compost. To play, simply sort the trash into the right bins. if your nnot sure where to sort things, in real life or in the game, simply check the index.</string>
+                                <string key="text">We wanted to make a game that teaches people where to put their waste. Many people, if they don't know where to throw things away, will just throw it in the trash, intead of recycling or composting.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Our mission:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I95-1a-bMO">
+                                <rect key="frame" x="116" y="66" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Instructions:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cvx-mt-Ace">
+                                <rect key="frame" x="113" y="318" width="149" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xcw-YQ-tlg">
+                                <rect key="frame" x="64" y="356" width="246" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text"> To play, simply sort the trash into the right bins. if you're not sure where to sort things in real life or in the game, simply check the index.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ENJOY!" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nqw-iI-nAU">
+                                <rect key="frame" x="139" y="509" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <viewLayoutGuide key="safeArea" id="Jrc-xI-yCk"/>
@@ -865,7 +894,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yogogo" translatesAutoresizingMaskIntoConstraints="NO" id="WNQ-0y-nF4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yogogo" translatesAutoresizingMaskIntoConstraints="NO" id="WNQ-0y-nF4">
                                 <rect key="frame" x="16" y="155" width="76" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -880,6 +909,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Yogogo" width="130" height="146"/>
         <image name="appleCore" width="98" height="144"/>
         <image name="avocadoPits" width="1506" height="1740"/>
         <image name="bake" width="144" height="137"/>
@@ -919,13 +949,12 @@
         <image name="straw" width="144" height="115"/>
         <image name="tires" width="120" height="111"/>
         <image name="toothpick" width="150" height="167"/>
-        <image name="yogogo" width="130" height="146"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aUh-uM-Cqg"/>
         <segue reference="ewi-D5-cwL"/>
         <segue reference="6YT-88-atI"/>
-        <segue reference="pZ9-Vm-5Uu"/>
+        <segue reference="3lz-6J-P0o"/>
         <segue reference="39d-Dr-TQa"/>
     </inferredMetricsTieBreakers>
 </document>
