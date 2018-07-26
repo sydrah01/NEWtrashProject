@@ -92,6 +92,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "battery", type:.recycling),
         Piece(name: "soda", type:.recycling),
         Piece(name: "foil", type:.recycling),
+        Piece(name: "shampoo", type:.recycling),
         
         // Compost
         Piece(name: "appleCore", type:.compost),
