@@ -66,7 +66,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "candyWrapper", type:.trash),//Teacher suggests type should be string
         Piece(name: "paperCup", type:.trash),
         Piece(name: "oldBulb", type:.trash),
-        Piece(name: "shot-needle-clipart-1", type:.trash),
+        Piece(name: "shotNeedle", type:.trash),
         
         
         // Recycling
@@ -88,9 +88,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "paper", type:.recycling),
         Piece(name: "paperBag", type:.recycling),
         Piece(name: "milkCarton", type:.recycling),
-        Piece(name: "Yogogo", type:.recycling),
+        Piece(name: "yogogo", type:.recycling),
         Piece(name: "battery", type:.recycling),
-        Piece(name: "canAl", type:.recycling),
+        Piece(name: "soda", type:.recycling),
         Piece(name: "foil", type:.recycling),
         Piece(name: "bake", type:.recycling),
         
