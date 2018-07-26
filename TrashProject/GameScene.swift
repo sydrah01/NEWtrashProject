@@ -34,6 +34,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     private var livesLabel : SKLabelNode!
     private var scoreLabel : SKLabelNode!
+    private var statusLabel : SKLabelNode!
     
     private var lives : Int = 0 {
         didSet {
@@ -44,6 +45,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     private var score: Int = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
+    private var status: String = "" {
+        didSet {
+            statusLabel.text = "Status: \(status)"
         }
     }
     
@@ -230,6 +237,13 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         scoreLabel.position = CGPoint(x: frame.maxX - 550, y: frame.maxY - 50)
         
         addChild(scoreLabel)
+        
+        statusLabel = SKLabelNode(fontNamed: "Chalkduster")
+        statusLabel.fontSize = 50
+        statusLabel.fontColor = .white
+        statusLabel.position = CGPoint(x: frame.minX + 420 , y: frame.maxY - 100)
+        
+        addChild(statusLabel)
     }
 
     // called when drag begins
@@ -239,6 +253,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         //don't pick up buckets
         if nodeName == "trash" || nodeName == "recycling" || nodeName == "compost" {
             caughtTrash = node
+            
         }
     }
     
@@ -307,10 +322,14 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                 
                 if pieceName == bucketName {
                     score += 1 //adding one point
+                    status = "Correct"
+                    statusLabel.fontColor = .green
                     print("score", firstBody, score)
                     removeBody(body: firstBody)
                 } else {
                     lives -= 1 //subtracting one point
+                    status = "Incorrect"
+                    statusLabel.fontColor = .red
                     print("lives", firstBody, lives)
                     removeBody(body: firstBody)
                     if lives == 0 {
