@@ -100,7 +100,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "eggShells", type:.compost),
         Piece(name: "foodWaste", type:.compost),
         Piece(name: "leaf", type:.compost),
-        Piece(name: "amuffinWrapper", type:.compost),
+        Piece(name: "muffinWraper", type:.compost),
         Piece(name: "peanuts", type:.compost),
         Piece(name: "toothpick", type:.compost),
         Piece(name: "pizzaBox", type:.compost),    ]
