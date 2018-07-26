@@ -38,6 +38,9 @@
                                 <state key="normal" title="INDEX">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="uwJ-vv-icj" kind="show" id="6YT-88-atI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CATCH THE TRASH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRw-m7-3Ng">
                                 <rect key="frame" x="51" y="159" width="272" height="63"/>
@@ -127,7 +130,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uwJ-vv-icj" kind="show" id="IT4-4T-eCF"/>
+                                    <segue destination="uwJ-vv-icj" kind="show" id="HXl-57-NHf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,6 +216,9 @@
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0vf-Mu-UEq" kind="show" id="076-xO-xu1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLw-SP-Gva">
                                 <rect key="frame" x="314" y="608" width="45" height="39"/>
@@ -345,6 +351,9 @@
                                 <state key="normal" title="Play again">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="flx-bY-g4Z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c3-uZ-6nG">
                                 <rect key="frame" x="16" y="48" width="53" height="36"/>
@@ -353,6 +362,9 @@
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0vf-Mu-UEq" kind="show" id="pKy-QZ-IVy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BT7-Ji-ay9">
                                 <rect key="frame" x="314" y="608" width="45" height="39"/>
@@ -550,6 +562,9 @@
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0vf-Mu-UEq" kind="show" id="mqe-gb-yZ8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSo-u0-Omy">
                                 <rect key="frame" x="261" y="38" width="98" height="39"/>
@@ -558,6 +573,9 @@
                                 <state key="normal" title="Play again">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="nEE-WL-DGQ"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Paper is recyclable" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ViI-Ta-93S">
                                 <rect key="frame" x="280" y="107" width="83" height="52"/>
@@ -762,6 +780,9 @@
                                 <state key="normal" title="Home">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0vf-Mu-UEq" kind="show" id="39d-Dr-TQa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od9-tr-aq2">
                                 <rect key="frame" x="261" y="34" width="98" height="39"/>
@@ -770,6 +791,9 @@
                                 <state key="normal" title="Play again">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="3lz-6J-P0o"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baz-cQ-0os">
                                 <rect key="frame" x="16" y="608" width="48" height="39"/>
@@ -834,8 +858,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aUh-uM-Cqg"/>
-        <segue reference="9eR-99-abm"/>
-        <segue reference="IT4-4T-eCF"/>
+        <segue reference="ewi-D5-cwL"/>
+        <segue reference="HXl-57-NHf"/>
         <segue reference="IhP-fw-Lbx"/>
+        <segue reference="39d-Dr-TQa"/>
     </inferredMetricsTieBreakers>
 </document>
