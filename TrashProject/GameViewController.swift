@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
+                (scene as! GameScene).viewController = self
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
@@ -58,4 +59,19 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "performSegue") {
+            let vc = segue.destination as! ScoreViewController
+            vc.highScore = highScore
+            vc.score = score
+        }
+    }
+    
+    func gameEnded(score: Int) {
+        self.score = score
+        self.highScore = max(score, highScore)
+        performSegue(withIdentifier: "performSegue", sender: nil)
+    }
+
 }

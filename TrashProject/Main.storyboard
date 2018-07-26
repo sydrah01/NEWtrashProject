@@ -38,9 +38,6 @@
                                 <state key="normal" title="INDEX">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="uwJ-vv-icj" kind="show" id="BBI-OU-rLm"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CATCH THE TRASH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRw-m7-3Ng">
                                 <rect key="frame" x="51" y="159" width="272" height="63"/>
@@ -80,7 +77,7 @@
         <!--Scoreboard-->
         <scene sceneID="a7c-jZ-W8a">
             <objects>
-                <viewController title="Scoreboard" id="V4r-6m-LeU" customClass="GameViewController" customModule="TrashProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Scoreboard" id="V4r-6m-LeU" customClass="ScoreViewController" customModule="TrashProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MPY-ry-WWH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +108,10 @@
                         <accessibility key="accessibilityConfiguration" identifier="sgShowResults"/>
                         <viewLayoutGuide key="safeArea" id="y4B-SF-UNG"/>
                     </view>
+                    <connections>
+                        <outlet property="highScoreLabel" destination="TZ4-zS-61J" id="59H-aa-QtE"/>
+                        <outlet property="scoreLabel" destination="Pn0-0H-dSj" id="dkC-HX-F5s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZk-A9-61z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -807,7 +808,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="aUh-uM-Cqg"/>
         <segue reference="9eR-99-abm"/>
-        <segue reference="uhi-8w-ZrR"/>
-        <segue reference="Rne-1O-ksI"/>
+        <segue reference="wjc-lX-Nbs"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,6 +23,7 @@ struct Piece {
 }
 
 class GameScene: SKScene,  SKPhysicsContactDelegate {
+    var viewController: GameViewController?
     
     // Define collision cetegories
     private let pieceCategory    : UInt32 = 0x1 << 0
@@ -64,7 +65,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "straw", type:.trash),
         Piece(name: "candyWrapper", type:.trash),//Teacher suggests type should be string
         Piece(name: "paperCup", type:.trash),
-        Piece(name: "lightBulb", type:.trash),
+        Piece(name: "oldBulb", type:.trash),
         Piece(name: "shot-needle-clipart-1", type:.trash),
         
         
@@ -87,7 +88,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "paper", type:.recycling),
         Piece(name: "paperBag", type:.recycling),
         Piece(name: "milkCarton", type:.recycling),
-        Piece(name: "Yogurt", type:.recycling),
+        Piece(name: "Yogogo", type:.recycling),
         Piece(name: "battery", type:.recycling),
         Piece(name: "canAl", type:.recycling),
         Piece(name: "foil", type:.recycling),
@@ -299,7 +300,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
     }
 
-    // collision handeler
+    // collision handler
     func didBegin(_ contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
@@ -311,9 +312,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        func performSegue(withIdentifier identifier: String,sender: Any?){
-            
-        }
         
         //if a piece hits its corrosponding bucket, it will disapear.
         if firstBody.categoryBitMask == pieceCategory {
@@ -321,39 +319,20 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             case bucketCategory:
                 let pieceName = firstBody.node!.name!
                 let bucketName = secondBody.node!.name!
-                let isCorrectBucket = pieceName + "Bucket" == bucketName
                 
-                if(piece.type == bucketName){ //Teacher says this should be the if statement by .type is not a string
+                if pieceName == bucketName { //Teacher says this should be the if statement by .type is not a string
                     firstBody.node!.removeFromParent()
                     score += 1 //adding one point
                     print(score)
-                }
-                    
-                    
-                //this is original code
-                /*if isCorrectBucket {
-                    firstBody.node!.removeFromParent()
-                    score += 1 //adding one point
-                    print(score)
-                }*/
-
-                else{
+                } else {
                     firstBody.node!.removeFromParent()
                     lives -= 1 //subtracting one point
                     print(lives)
-                    if(lives==0) {
-                        performSegue(withIdentifier: "performSegue", sender: nil)//takes us to the next window
-                        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                            if(segue.identifier == "performSegue") {
-                                let vc = segue.destination as! GameViewController
-                                vc.highScore = highScore
-                                vc.score = score
-                            }
+                    if lives == 0 {
+                        self.view?.isPaused = true
+                        viewController!.gameEnded(score:score)
                     }
-                    
                 }
-
-            }
             case boundaryCategory:
                 firstBody.node!.removeFromParent()
             default:
