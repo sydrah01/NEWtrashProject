@@ -983,7 +983,7 @@
         <image name="eggShells" width="150" height="106"/>
         <image name="envelopes" width="144" height="92"/>
         <image name="etrash" width="144" height="115"/>
-        <image name="fluolight" width="144" height="230"/>
+        <image name="fluolight" width="95" height="151"/>
         <image name="foil" width="144" height="96"/>
         <image name="foodWaste" width="146" height="130"/>
         <image name="fridge" width="144" height="144"/>
