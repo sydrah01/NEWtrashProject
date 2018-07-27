@@ -13,9 +13,14 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
     
-    
-    
-    var highScore: Int = 0
+    var highScore: Int = UserDefaults.standard.integer(forKey: "highScore") {
+        didSet {
+            if oldValue != highScore {
+                UserDefaults.standard.set(highScore, forKey: "highScore")
+                highScoreLabel.text = "High Score: \(highScore)"
+            }
+        }
+    }
     var score: Int = 0
 
     
@@ -25,6 +30,8 @@ class ScoreViewController: UIViewController {
         super.viewDidLoad()
 
         scoreLabel.text = "Score: \(score)"
+        
+        highScore = max(highScore, score)
         highScoreLabel.text = "High Score: \(highScore)"
     }
 

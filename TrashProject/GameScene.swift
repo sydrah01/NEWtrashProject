@@ -57,16 +57,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     private var caughtTrash : SKNode?
     
     var i : Int = 0
-    
-    //var numCorrect: Int = 0
-   // var numIncorrect: Int = 0
 
-    
-    
-    var highScoreLabel = SKLabelNode()
-    
-    
-   
     private let allPieces = [
         Piece(name: "diapers", type:.trash),
         Piece(name: "straw", type:.trash),
@@ -112,17 +103,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "peanuts", type:.compost),
         Piece(name: "toothpick", type:.compost),
         Piece(name: "pizzaBox", type:.compost),    ]
-    
-    var highScore: Int{
-        
-        get {
-            return UserDefaults.standard.integer(forKey: "highScore")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "highScore")
-        }
-    }
-
    
     override func didMove(to view: SKView) {
         setupGameWorld()
@@ -137,7 +117,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         lives = 3
         score = 0
-        highScore = 0
        
         
         // A wall to the garbage doesnt go past the trash cans.
