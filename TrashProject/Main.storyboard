@@ -894,7 +894,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yogogo" translatesAutoresizingMaskIntoConstraints="NO" id="WNQ-0y-nF4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yogogo" translatesAutoresizingMaskIntoConstraints="NO" id="WNQ-0y-nF4">
                                 <rect key="frame" x="9" y="156" width="76" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -964,7 +964,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Yogogo" width="130" height="146"/>
         <image name="appleCore" width="98" height="144"/>
         <image name="avocadoPits" width="1506" height="1740"/>
         <image name="bake" width="144" height="137"/>
@@ -983,7 +982,7 @@
         <image name="eggShells" width="150" height="106"/>
         <image name="envelopes" width="144" height="92"/>
         <image name="etrash" width="144" height="115"/>
-        <image name="fluolight" width="144" height="230"/>
+        <image name="fluolight" width="95" height="151"/>
         <image name="foil" width="144" height="96"/>
         <image name="foodWaste" width="146" height="130"/>
         <image name="fridge" width="144" height="144"/>
@@ -1009,12 +1008,13 @@
         <image name="toys" width="195" height="144"/>
         <image name="tshirt" width="1808" height="2048"/>
         <image name="woodenSpoon" width="200" height="200"/>
+        <image name="yogogo" width="130" height="146"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aUh-uM-Cqg"/>
         <segue reference="9eR-99-abm"/>
         <segue reference="6YT-88-atI"/>
-        <segue reference="Rne-1O-ksI"/>
-        <segue reference="076-xO-xu1"/>
+        <segue reference="3lz-6J-P0o"/>
+        <segue reference="39d-Dr-TQa"/>
     </inferredMetricsTieBreakers>
 </document>
