@@ -174,14 +174,6 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HIGH SCORE: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZ4-zS-61J">
-                                <rect key="frame" x="91" y="319" width="195" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzy-le-c9r">
                                 <rect key="frame" x="121" y="471" width="133" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -220,7 +212,6 @@
                         <viewLayoutGuide key="safeArea" id="y4B-SF-UNG"/>
                     </view>
                     <connections>
-                        <outlet property="highScoreLabel" destination="TZ4-zS-61J" id="59H-aa-QtE"/>
                         <outlet property="scoreLabel" destination="Pn0-0H-dSj" id="dkC-HX-F5s"/>
                     </connections>
                 </viewController>
@@ -953,8 +944,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="aUh-uM-Cqg"/>
         <segue reference="ewi-D5-cwL"/>
-        <segue reference="6YT-88-atI"/>
-        <segue reference="3lz-6J-P0o"/>
+        <segue reference="HXl-57-NHf"/>
+        <segue reference="IhP-fw-Lbx"/>
         <segue reference="39d-Dr-TQa"/>
     </inferredMetricsTieBreakers>
 </document>

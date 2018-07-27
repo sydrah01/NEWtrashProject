@@ -62,10 +62,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
    // var numIncorrect: Int = 0
 
     
-    /*
+    
     var highScoreLabel = SKLabelNode()
-    var highScore = UserDefaults().integer(forKey: "HIGHSCORE")
-    */
+    
+    
    
     private let allPieces = [
         Piece(name: "diapers", type:.trash),
@@ -95,7 +95,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "paper", type:.recycling),
         Piece(name: "paperBag", type:.recycling),
         Piece(name: "milkCarton", type:.recycling),
-        Piece(name: "yogogo", type:.recycling),
+        Piece(name: "Yogogo", type:.recycling),
         Piece(name: "battery", type:.recycling),
         Piece(name: "soda", type:.recycling),
         Piece(name: "foil", type:.recycling),
@@ -114,6 +114,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         Piece(name: "pizzaBox", type:.compost),    ]
     
     var highScore: Int{
+        
         get {
             return UserDefaults.standard.integer(forKey: "highScore")
         }
@@ -158,7 +159,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     }
     
     func startDroppingPieces() {
-        let wait = SKAction.wait(forDuration: 3) //change drop speed here
+        let wait = SKAction.wait(forDuration: 1.7) //change drop speed here
         let block = SKAction.run({
             [unowned self] in
             self.addRandomPiece()
