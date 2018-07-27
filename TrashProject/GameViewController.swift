@@ -12,8 +12,6 @@ import GameplayKit
 
 class GameViewController: UIViewController {
     
-    
-    var highScore: Int = 0
     var score: Int = 0
     
     
@@ -63,14 +61,12 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "performSegue") {
             let vc = segue.destination as! ScoreViewController
-            vc.highScore = highScore
             vc.score = score
         }
     }
     
     func gameEnded(score: Int) {
         self.score = score
-        self.highScore = max(score, highScore)
         performSegue(withIdentifier: "performSegue", sender: nil)
     }
 
