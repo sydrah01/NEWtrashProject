@@ -249,11 +249,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     // called when drag begins
     func touchBegin(atPoint pos : CGPoint) {
         let node = atPoint(pos)
-        let nodeName = node.name
-        //don't pick up buckets
-        if nodeName == "trash" || nodeName == "recycling" || nodeName == "compost" {
+        if node.physicsBody?.categoryBitMask == pieceCategory {
             caughtTrash = node
-            
         }
     }
     
