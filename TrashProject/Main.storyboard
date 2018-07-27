@@ -327,13 +327,6 @@
                                 <rect key="frame" x="16" y="273" width="77" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Aluminum foil is recylable" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3WT-NR-3St">
-                                <rect key="frame" x="91" y="198" width="90" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Batteries are recyclable" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-zq-vKu">
                                 <rect key="frame" x="91" y="285" width="90" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -408,6 +401,13 @@
                                 <rect key="frame" x="196" y="518" width="47" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Aluminum foil is not recylable. It gets caught in the machines" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3WT-NR-3St">
+                                <rect key="frame" x="86" y="185" width="100" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hVS-KL-Cif"/>
@@ -895,9 +895,64 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Yogogo" translatesAutoresizingMaskIntoConstraints="NO" id="WNQ-0y-nF4">
-                                <rect key="frame" x="16" y="155" width="76" height="64"/>
+                                <rect key="frame" x="9" y="156" width="76" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tshirt" translatesAutoresizingMaskIntoConstraints="NO" id="Atw-MG-vu3">
+                                <rect key="frame" x="12" y="243" width="76" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plasticBottle" translatesAutoresizingMaskIntoConstraints="NO" id="JYj-Jm-5wA">
+                                <rect key="frame" x="16" y="326" width="76" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="woodenSpoon" translatesAutoresizingMaskIntoConstraints="NO" id="f1d-ve-fMr">
+                                <rect key="frame" x="19" y="409" width="76" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Clothes cannot be recycled, but donated to good will" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c0P-uX-tgq">
+                                <rect key="frame" x="93" y="241" width="104" height="78.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="plastic bottles are recyclable but take the cap off before doing so" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1XH-Pz-aB4">
+                                <rect key="frame" x="84" y="326" width="123" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Wood cannot be recycled, especially when furnished" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TI0-3P-Qa8">
+                                <rect key="frame" x="93" y="409" width="104" height="78.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="toys" translatesAutoresizingMaskIntoConstraints="NO" id="oZa-8T-rgH">
+                                <rect key="frame" x="12" y="491" width="76" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Toys made from industrial plastic are not recyclable" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tIK-bk-Ro4">
+                                <rect key="frame" x="89" y="489" width="104" height="78.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="bubbleWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gDz-V5-QeZ">
+                                <rect key="frame" x="191" y="142" width="82" height="78"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Bubble wrap is not recyclable, because it gets stuck in the machines" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="76W-X4-FUP">
+                                <rect key="frame" x="258" y="148" width="104" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0cp-2r-ULg"/>
@@ -914,6 +969,7 @@
         <image name="avocadoPits" width="1506" height="1740"/>
         <image name="bake" width="144" height="137"/>
         <image name="battery" width="144" height="140"/>
+        <image name="bubbleWrap" width="500" height="500"/>
         <image name="can" width="144" height="185"/>
         <image name="candyWrapper" width="144" height="108"/>
         <image name="car" width="144" height="65"/>
@@ -943,18 +999,22 @@
         <image name="paperCup" width="144" height="144"/>
         <image name="peanuts" width="340" height="102"/>
         <image name="pizzaBox" width="180" height="128"/>
+        <image name="plasticBottle" width="200" height="200"/>
         <image name="shampoo" width="144" height="144"/>
         <image name="shotNeedle" width="144" height="166"/>
         <image name="soda" width="83" height="144"/>
         <image name="straw" width="144" height="115"/>
         <image name="tires" width="120" height="111"/>
         <image name="toothpick" width="150" height="167"/>
+        <image name="toys" width="195" height="144"/>
+        <image name="tshirt" width="1808" height="2048"/>
+        <image name="woodenSpoon" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="aUh-uM-Cqg"/>
-        <segue reference="ewi-D5-cwL"/>
+        <segue reference="9eR-99-abm"/>
         <segue reference="6YT-88-atI"/>
-        <segue reference="wjc-lX-Nbs"/>
-        <segue reference="39d-Dr-TQa"/>
+        <segue reference="Rne-1O-ksI"/>
+        <segue reference="076-xO-xu1"/>
     </inferredMetricsTieBreakers>
 </document>
